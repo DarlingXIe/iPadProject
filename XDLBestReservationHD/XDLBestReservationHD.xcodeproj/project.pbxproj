@@ -14,6 +14,12 @@
 		F794606F1DBAA520007B8DF2 /* cities.plist in Resources */ = {isa = PBXBuildFile; fileRef = F794606B1DBAA520007B8DF2 /* cities.plist */; };
 		F79460701DBAA520007B8DF2 /* cityGroups.plist in Resources */ = {isa = PBXBuildFile; fileRef = F794606C1DBAA520007B8DF2 /* cityGroups.plist */; };
 		F79460711DBAA520007B8DF2 /* sorts.plist in Resources */ = {isa = PBXBuildFile; fileRef = F794606D1DBAA520007B8DF2 /* sorts.plist */; };
+		F79460741DBAA761007B8DF2 /* XDLHomeCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F79460731DBAA761007B8DF2 /* XDLHomeCollectionViewController.m */; };
+		F79460781DBAB07A007B8DF2 /* XDLNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F79460771DBAB07A007B8DF2 /* XDLNavigationViewController.m */; };
+		F794607B1DBAB09F007B8DF2 /* UIBarButtonItem+XDLCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = F794607A1DBAB09F007B8DF2 /* UIBarButtonItem+XDLCategory.m */; };
+		F794607E1DBAB0C3007B8DF2 /* UIView+XDLCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = F794607D1DBAB0C3007B8DF2 /* UIView+XDLCategory.m */; };
+		F79460811DBAC8C5007B8DF2 /* XDLHomeNavView.m in Sources */ = {isa = PBXBuildFile; fileRef = F79460801DBAC8C4007B8DF2 /* XDLHomeNavView.m */; };
+		F79460831DBAC8E6007B8DF2 /* XDLHomeNavView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F79460821DBAC8E6007B8DF2 /* XDLHomeNavView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +33,18 @@
 		F794606B1DBAA520007B8DF2 /* cities.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = cities.plist; sourceTree = "<group>"; };
 		F794606C1DBAA520007B8DF2 /* cityGroups.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = cityGroups.plist; sourceTree = "<group>"; };
 		F794606D1DBAA520007B8DF2 /* sorts.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = sorts.plist; sourceTree = "<group>"; };
+		F79460721DBAA761007B8DF2 /* XDLHomeCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDLHomeCollectionViewController.h; sourceTree = "<group>"; };
+		F79460731DBAA761007B8DF2 /* XDLHomeCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XDLHomeCollectionViewController.m; sourceTree = "<group>"; };
+		F79460751DBAABF4007B8DF2 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		F79460761DBAB07A007B8DF2 /* XDLNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDLNavigationViewController.h; sourceTree = "<group>"; };
+		F79460771DBAB07A007B8DF2 /* XDLNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XDLNavigationViewController.m; sourceTree = "<group>"; };
+		F79460791DBAB09F007B8DF2 /* UIBarButtonItem+XDLCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+XDLCategory.h"; sourceTree = "<group>"; };
+		F794607A1DBAB09F007B8DF2 /* UIBarButtonItem+XDLCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+XDLCategory.m"; sourceTree = "<group>"; };
+		F794607C1DBAB0C3007B8DF2 /* UIView+XDLCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+XDLCategory.h"; sourceTree = "<group>"; };
+		F794607D1DBAB0C3007B8DF2 /* UIView+XDLCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+XDLCategory.m"; sourceTree = "<group>"; };
+		F794607F1DBAC8C4007B8DF2 /* XDLHomeNavView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDLHomeNavView.h; sourceTree = "<group>"; };
+		F79460801DBAC8C4007B8DF2 /* XDLHomeNavView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XDLHomeNavView.m; sourceTree = "<group>"; };
+		F79460821DBAC8E6007B8DF2 /* XDLHomeNavView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XDLHomeNavView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +81,7 @@
 				F794604B1DBA977D007B8DF2 /* AppDelegate.h */,
 				F794604C1DBA977D007B8DF2 /* AppDelegate.m */,
 				F79460481DBA977D007B8DF2 /* Supporting Files */,
+				F79460751DBAABF4007B8DF2 /* PrefixHeader.pch */,
 			);
 			path = XDLBestReservationHD;
 			sourceTree = "<group>";
@@ -100,6 +119,8 @@
 		F79460611DBAA2D4007B8DF2 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				F79460721DBAA761007B8DF2 /* XDLHomeCollectionViewController.h */,
+				F79460731DBAA761007B8DF2 /* XDLHomeCollectionViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -114,6 +135,9 @@
 		F79460631DBAA2D4007B8DF2 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F794607F1DBAC8C4007B8DF2 /* XDLHomeNavView.h */,
+				F79460801DBAC8C4007B8DF2 /* XDLHomeNavView.m */,
+				F79460821DBAC8E6007B8DF2 /* XDLHomeNavView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -132,6 +156,10 @@
 		F79460651DBAA2D4007B8DF2 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				F79460791DBAB09F007B8DF2 /* UIBarButtonItem+XDLCategory.h */,
+				F794607A1DBAB09F007B8DF2 /* UIBarButtonItem+XDLCategory.m */,
+				F794607C1DBAB0C3007B8DF2 /* UIView+XDLCategory.h */,
+				F794607D1DBAB0C3007B8DF2 /* UIView+XDLCategory.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -139,6 +167,8 @@
 		F79460661DBAA2D4007B8DF2 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				F79460761DBAB07A007B8DF2 /* XDLNavigationViewController.h */,
+				F79460771DBAB07A007B8DF2 /* XDLNavigationViewController.m */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -194,6 +224,7 @@
 		F794603D1DBA977D007B8DF2 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = XDL;
 				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = itcast;
 				TargetAttributes = {
@@ -226,6 +257,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F79460831DBAC8E6007B8DF2 /* XDLHomeNavView.xib in Resources */,
 				F794606F1DBAA520007B8DF2 /* cities.plist in Resources */,
 				F794606E1DBAA520007B8DF2 /* categories.plist in Resources */,
 				F79460711DBAA520007B8DF2 /* sorts.plist in Resources */,
@@ -241,8 +273,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F79460811DBAC8C5007B8DF2 /* XDLHomeNavView.m in Sources */,
 				F794604D1DBA977D007B8DF2 /* AppDelegate.m in Sources */,
+				F79460741DBAA761007B8DF2 /* XDLHomeCollectionViewController.m in Sources */,
 				F794604A1DBA977D007B8DF2 /* main.m in Sources */,
+				F794607B1DBAB09F007B8DF2 /* UIBarButtonItem+XDLCategory.m in Sources */,
+				F79460781DBAB07A007B8DF2 /* XDLNavigationViewController.m in Sources */,
+				F794607E1DBAB0C3007B8DF2 /* UIView+XDLCategory.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,6 +381,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PREFIX_HEADER = XDLBestReservationHD/PrefixHeader.pch;
 				INFOPLIST_FILE = XDLBestReservationHD/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -357,6 +395,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PREFIX_HEADER = XDLBestReservationHD/PrefixHeader.pch;
 				INFOPLIST_FILE = XDLBestReservationHD/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

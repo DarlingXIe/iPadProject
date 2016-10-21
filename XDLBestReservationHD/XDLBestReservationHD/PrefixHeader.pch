@@ -1,0 +1,26 @@
+//
+//  PrefixHeader.pch
+//  XDLBestReservationHD
+//
+//  Created by DalinXie on 16/10/21.
+//  Copyright © 2016年 itcast. All rights reserved.
+//
+#import "UIView+XDLCategory.h"
+#import "UIBarButtonItem+XDLCategory.h"
+#define XDLColor(r,g,b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1];
+/** NSLog 输出宏*/ //macro definition
+#ifdef DEBUG
+#define NSLog(FORMAT, ...) fprintf(stderr,"%s:%d\t%s\n",[[[NSString stringWithUTF8String:__FILE__] lastPathComponent] UTF8String], __LINE__, [[NSString stringWithFormat:FORMAT, ##__VA_ARGS__] UTF8String]);
+#else
+#define NSLog(...)
+#endif
+
+// #if def __OBJC__  保证头文件的引用
+#ifdef __OBJC__
+
+#import <UIKit/UIKit.h>
+
+#import <Foundation/Foundation.h>
+
+#endif
+

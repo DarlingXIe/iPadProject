@@ -8,6 +8,11 @@
 
 #import "AppDelegate.h"
 
+#import "XDLHomeCollectionViewController.h"
+
+#import "XDLNavigationViewController.h"
+
+
 @interface AppDelegate ()
 
 @end
@@ -17,6 +22,12 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    
+    self.window.rootViewController = [[XDLNavigationViewController alloc] initWithRootViewController:[XDLHomeCollectionViewController new]];
+    
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 
