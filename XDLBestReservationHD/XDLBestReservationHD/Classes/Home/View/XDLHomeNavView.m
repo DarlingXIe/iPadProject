@@ -14,7 +14,5 @@
     
     return [[NSBundle mainBundle] loadNibNamed:@"XDLHomeNavView" owner:nil options:nil].firstObject;
 }
-
-
-
+// 
 @end

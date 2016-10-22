@@ -20,6 +20,9 @@
 		F794607E1DBAB0C3007B8DF2 /* UIView+XDLCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = F794607D1DBAB0C3007B8DF2 /* UIView+XDLCategory.m */; };
 		F79460811DBAC8C5007B8DF2 /* XDLHomeNavView.m in Sources */ = {isa = PBXBuildFile; fileRef = F79460801DBAC8C4007B8DF2 /* XDLHomeNavView.m */; };
 		F79460831DBAC8E6007B8DF2 /* XDLHomeNavView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F79460821DBAC8E6007B8DF2 /* XDLHomeNavView.xib */; };
+		F79460861DBB011A007B8DF2 /* XDLCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F79460851DBB011A007B8DF2 /* XDLCategoryViewController.m */; };
+		F79460891DBB0821007B8DF2 /* XDLDropdownView.m in Sources */ = {isa = PBXBuildFile; fileRef = F79460881DBB0821007B8DF2 /* XDLDropdownView.m */; };
+		F794608B1DBB083C007B8DF2 /* XDLDropdownView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F794608A1DBB083C007B8DF2 /* XDLDropdownView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +48,11 @@
 		F794607F1DBAC8C4007B8DF2 /* XDLHomeNavView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDLHomeNavView.h; sourceTree = "<group>"; };
 		F79460801DBAC8C4007B8DF2 /* XDLHomeNavView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XDLHomeNavView.m; sourceTree = "<group>"; };
 		F79460821DBAC8E6007B8DF2 /* XDLHomeNavView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XDLHomeNavView.xib; sourceTree = "<group>"; };
+		F79460841DBB011A007B8DF2 /* XDLCategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDLCategoryViewController.h; sourceTree = "<group>"; };
+		F79460851DBB011A007B8DF2 /* XDLCategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XDLCategoryViewController.m; sourceTree = "<group>"; };
+		F79460871DBB0821007B8DF2 /* XDLDropdownView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDLDropdownView.h; sourceTree = "<group>"; };
+		F79460881DBB0821007B8DF2 /* XDLDropdownView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XDLDropdownView.m; sourceTree = "<group>"; };
+		F794608A1DBB083C007B8DF2 /* XDLDropdownView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XDLDropdownView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +129,8 @@
 			children = (
 				F79460721DBAA761007B8DF2 /* XDLHomeCollectionViewController.h */,
 				F79460731DBAA761007B8DF2 /* XDLHomeCollectionViewController.m */,
+				F79460841DBB011A007B8DF2 /* XDLCategoryViewController.h */,
+				F79460851DBB011A007B8DF2 /* XDLCategoryViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -138,6 +148,9 @@
 				F794607F1DBAC8C4007B8DF2 /* XDLHomeNavView.h */,
 				F79460801DBAC8C4007B8DF2 /* XDLHomeNavView.m */,
 				F79460821DBAC8E6007B8DF2 /* XDLHomeNavView.xib */,
+				F79460871DBB0821007B8DF2 /* XDLDropdownView.h */,
+				F79460881DBB0821007B8DF2 /* XDLDropdownView.m */,
+				F794608A1DBB083C007B8DF2 /* XDLDropdownView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -258,6 +271,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F79460831DBAC8E6007B8DF2 /* XDLHomeNavView.xib in Resources */,
+				F794608B1DBB083C007B8DF2 /* XDLDropdownView.xib in Resources */,
 				F794606F1DBAA520007B8DF2 /* cities.plist in Resources */,
 				F794606E1DBAA520007B8DF2 /* categories.plist in Resources */,
 				F79460711DBAA520007B8DF2 /* sorts.plist in Resources */,
@@ -276,8 +290,10 @@
 				F79460811DBAC8C5007B8DF2 /* XDLHomeNavView.m in Sources */,
 				F794604D1DBA977D007B8DF2 /* AppDelegate.m in Sources */,
 				F79460741DBAA761007B8DF2 /* XDLHomeCollectionViewController.m in Sources */,
+				F79460861DBB011A007B8DF2 /* XDLCategoryViewController.m in Sources */,
 				F794604A1DBA977D007B8DF2 /* main.m in Sources */,
 				F794607B1DBAB09F007B8DF2 /* UIBarButtonItem+XDLCategory.m in Sources */,
+				F79460891DBB0821007B8DF2 /* XDLDropdownView.m in Sources */,
 				F79460781DBAB07A007B8DF2 /* XDLNavigationViewController.m in Sources */,
 				F794607E1DBAB0C3007B8DF2 /* UIView+XDLCategory.m in Sources */,
 			);
