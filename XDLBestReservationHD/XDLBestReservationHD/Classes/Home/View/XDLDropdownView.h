@@ -10,4 +10,8 @@
 
 @interface XDLDropdownView : UIView
 
+
++(instancetype)dropdownView;
+
+
 @end

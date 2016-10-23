@@ -8,7 +8,10 @@
 
 #import "XDLCategoryViewController.h"
 #import "XDLDropdownView.h"
+
 @interface XDLCategoryViewController ()
+
+
 
 @end
 
@@ -17,11 +20,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self setupUI];
 }
 
 -(void)setupUI{
     
+    XDLDropdownView * dropdownView = [XDLDropdownView dropdownView];
     
+    [self.view addSubview:dropdownView];
+    
+    self.preferredContentSize = dropdownView.size;
+
 }
 
 - (void)didReceiveMemoryWarning {

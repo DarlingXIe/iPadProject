@@ -39,6 +39,7 @@ static NSString * const reuseIdentifier = @"Cell";
     //self.collectionView.backgroundColor = [UIColor whiteColor];
     // Register cell classes
     
+    [self setupLeftNav];
     [self setupRightNav];
     
     [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
@@ -126,17 +127,25 @@ static NSString * const reuseIdentifier = @"Cell";
     NSLog(@"search")
 }
 
+#pragma mark monitor scroll 
+
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    
+    NSLog(@"----content%f", self.collectionView.contentOffset.y);
+
+}
+
 #pragma mark <UICollectionViewDataSource>
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
-}
 
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of items
-    return 0;
+    return 20;
 }
+//
+//- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+//#warning Incomplete implementation, return the number of items
+//    return 0;
+//}
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];

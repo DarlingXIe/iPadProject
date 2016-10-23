@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface XDLHomeCollectionViewController : UICollectionViewController
+@interface XDLHomeCollectionViewController : UICollectionViewController<UICollectionViewDelegate>
 
 @end
