@@ -11,8 +11,6 @@
 
 @interface XDLCategoryViewController ()
 
-
-
 @end
 
 @implementation XDLCategoryViewController
