@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9837AF18349E9B364E9C9B52 /* libPods-XDLBestReservationHD.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 818A494B72606DD0C1CCD50A /* libPods-XDLBestReservationHD.a */; };
+		F7053BC41DFB1D8D00D0A9F6 /* XDLConst.m in Sources */ = {isa = PBXBuildFile; fileRef = F7053BC31DFB1D8D00D0A9F6 /* XDLConst.m */; };
 		F794604A1DBA977D007B8DF2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F79460491DBA977D007B8DF2 /* main.m */; };
 		F794604D1DBA977D007B8DF2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F794604C1DBA977D007B8DF2 /* AppDelegate.m */; };
 		F79460551DBA977D007B8DF2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F79460541DBA977D007B8DF2 /* Assets.xcassets */; };
@@ -26,6 +28,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		151BCA9147B8E81B5B4D8F0F /* Pods-XDLBestReservationHD.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XDLBestReservationHD.release.xcconfig"; path = "Pods/Target Support Files/Pods-XDLBestReservationHD/Pods-XDLBestReservationHD.release.xcconfig"; sourceTree = "<group>"; };
+		818A494B72606DD0C1CCD50A /* libPods-XDLBestReservationHD.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XDLBestReservationHD.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE0D98DAF17FCF37FA21BDD6 /* Pods-XDLBestReservationHD.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XDLBestReservationHD.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XDLBestReservationHD/Pods-XDLBestReservationHD.debug.xcconfig"; sourceTree = "<group>"; };
+		F7053BC21DFB1D8D00D0A9F6 /* XDLConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDLConst.h; sourceTree = "<group>"; };
+		F7053BC31DFB1D8D00D0A9F6 /* XDLConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XDLConst.m; sourceTree = "<group>"; };
 		F79460451DBA977D007B8DF2 /* XDLBestReservationHD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XDLBestReservationHD.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F79460491DBA977D007B8DF2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F794604B1DBA977D007B8DF2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -60,17 +67,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9837AF18349E9B364E9C9B52 /* libPods-XDLBestReservationHD.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F10F66E11E813BF4A51990C1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CE0D98DAF17FCF37FA21BDD6 /* Pods-XDLBestReservationHD.debug.xcconfig */,
+				151BCA9147B8E81B5B4D8F0F /* Pods-XDLBestReservationHD.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		F5614FF54BAB202BE1186888 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				818A494B72606DD0C1CCD50A /* libPods-XDLBestReservationHD.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F794603C1DBA977D007B8DF2 = {
 			isa = PBXGroup;
 			children = (
 				F79460471DBA977D007B8DF2 /* XDLBestReservationHD */,
 				F79460461DBA977D007B8DF2 /* Products */,
+				F10F66E11E813BF4A51990C1 /* Pods */,
+				F5614FF54BAB202BE1186888 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -196,6 +223,8 @@
 		F79460681DBAA2D4007B8DF2 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				F7053BC21DFB1D8D00D0A9F6 /* XDLConst.h */,
+				F7053BC31DFB1D8D00D0A9F6 /* XDLConst.m */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -218,9 +247,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F794605C1DBA977D007B8DF2 /* Build configuration list for PBXNativeTarget "XDLBestReservationHD" */;
 			buildPhases = (
+				06CED4B4B6DD0A655103BCFF /* [CP] Check Pods Manifest.lock */,
 				F79460411DBA977D007B8DF2 /* Sources */,
 				F79460421DBA977D007B8DF2 /* Frameworks */,
 				F79460431DBA977D007B8DF2 /* Resources */,
+				85BD58B05ACD5C6E3C94265F /* [CP] Embed Pods Frameworks */,
+				1824C1CCF65AC42C6796C3D4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -238,7 +270,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = XDL;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = itcast;
 				TargetAttributes = {
 					F79460441DBA977D007B8DF2 = {
@@ -282,6 +314,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		06CED4B4B6DD0A655103BCFF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		1824C1CCF65AC42C6796C3D4 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-XDLBestReservationHD/Pods-XDLBestReservationHD-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		85BD58B05ACD5C6E3C94265F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-XDLBestReservationHD/Pods-XDLBestReservationHD-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F79460411DBA977D007B8DF2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -295,6 +375,7 @@
 				F794607B1DBAB09F007B8DF2 /* UIBarButtonItem+XDLCategory.m in Sources */,
 				F79460891DBB0821007B8DF2 /* XDLDropdownView.m in Sources */,
 				F79460781DBAB07A007B8DF2 /* XDLNavigationViewController.m in Sources */,
+				F7053BC41DFB1D8D00D0A9F6 /* XDLConst.m in Sources */,
 				F794607E1DBAB0C3007B8DF2 /* UIView+XDLCategory.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -320,6 +401,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -368,6 +450,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -394,6 +477,7 @@
 		};
 		F794605D1DBA977D007B8DF2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CE0D98DAF17FCF37FA21BDD6 /* Pods-XDLBestReservationHD.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -408,6 +492,7 @@
 		};
 		F794605E1DBA977D007B8DF2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 151BCA9147B8E81B5B4D8F0F /* Pods-XDLBestReservationHD.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -439,6 +524,7 @@
 				F794605E1DBA977D007B8DF2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

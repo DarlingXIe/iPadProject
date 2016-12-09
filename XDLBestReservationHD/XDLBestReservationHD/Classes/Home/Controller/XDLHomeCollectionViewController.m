@@ -9,7 +9,7 @@
 #import "XDLHomeCollectionViewController.h"
 #import "XDLCategoryViewController.h"
 #import "XDLHomeNavView.h"
-
+#import "XDLConst.h"
 @interface XDLHomeCollectionViewController ()
 
 @end
@@ -18,13 +18,12 @@
 
 static NSString * const reuseIdentifier = @"Cell";
 
-
 -(instancetype)init{
     
     self = [super initWithCollectionViewLayout:[[UICollectionViewLayout alloc] init]];
     
     if(self){
-    
+        
     }
     return self;
 }
@@ -34,11 +33,9 @@ static NSString * const reuseIdentifier = @"Cell";
     
     // Uncomment the following line to preserve selection between presentations
     // self.clearsSelectionOnViewWillAppear = NO;
-    
-    self.collectionView.backgroundColor = [UIColor colorWithRed:230/255.0 green:230/255.0 blue:230/255.0 alpha:1];
+    self.collectionView.backgroundColor = MTColorBg;
     //self.collectionView.backgroundColor = [UIColor whiteColor];
     // Register cell classes
-    
     [self setupLeftNav];
     [self setupRightNav];
     
@@ -53,16 +50,12 @@ static NSString * const reuseIdentifier = @"Cell";
     
     //1. add logoItem
     UIBarButtonItem * logoItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"icon_meituan_logo"]style:UIBarButtonItemStylePlain target:nil action:nil];
-    
     //close userInteration
     logoItem.enabled = NO;
-    
     //2. add categoryNavView
     //customView for leftButton
     XDLHomeNavView * catergoryNavView = [XDLHomeNavView XDLHomeNavView];
-    
     UIBarButtonItem * catergoryItem = [[UIBarButtonItem alloc] initWithCustomView:catergoryNavView];
-    
     [catergoryNavView addTarget:self action:@selector(categoryItemClick) forControlEvents:UIControlEventTouchUpInside];
     //3. add loction func
     XDLHomeNavView * districtNavView = [XDLHomeNavView XDLHomeNavView];
@@ -85,8 +78,7 @@ static NSString * const reuseIdentifier = @"Cell";
     UIBarButtonItem * mapItem = [UIBarButtonItem barButtonItemWithTarget:self action:@selector(mapItemClick) Icon:@"icon_map" highlightedIcon:@"icon_map_highlighted"];
     
     mapItem.customView.width = 60;
-    
-    
+
     UIBarButtonItem * searchItem = [UIBarButtonItem barButtonItemWithTarget:self action:@selector(searchItemClick) Icon:@"icon_search" highlightedIcon:@"icon_search_highlighted"];
     
     searchItem.customView.width = 60;

@@ -16,13 +16,18 @@
 
 +(void)initialize{
     
-    UINavigationBar * navBar = [UINavigationBar appearance];
+    UINavigationBar *navBar = [UINavigationBar appearance];
     
     [navBar setBackgroundImage:[UIImage imageNamed:@"bg_navigationBar_normal"] forBarMetrics:UIBarMetricsDefault];
+}
+
+-(void)viewDidLoad{
+    [super viewDidLoad];
+    [self setupUI];
     
-    //[navBar setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
+}
+-(void)setupUI{
     
-    [navBar setShadowImage:[[UIImage alloc] init]];
 }
 
 @end

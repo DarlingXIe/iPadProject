@@ -23,8 +23,6 @@ static NSString * rightCellId = @"rightCellId";
     return [nib instantiateWithOwner:nil options:nil][0];
 
 }
-
-
 #pragma tableViewData
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -51,15 +49,5 @@ static NSString * rightCellId = @"rightCellId";
     
     }
 }
-
-
-
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
 
 @end
