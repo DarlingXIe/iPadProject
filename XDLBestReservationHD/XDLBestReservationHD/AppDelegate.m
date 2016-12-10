@@ -8,9 +8,9 @@
 
 #import "AppDelegate.h"
 
-#import "XDLHomeCollectionViewController.h"
+#import "HMHomeViewController.h"
 
-#import "XDLNavigationViewController.h"
+#import "HMNavigateController.h"
 
 @interface AppDelegate ()
 
@@ -22,7 +22,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    self.window.rootViewController = [[XDLNavigationViewController alloc] initWithRootViewController:[XDLHomeCollectionViewController new]];
+    self.window.rootViewController = [[HMNavigateController alloc] initWithRootViewController:[HMHomeViewController new]];
     [self.window makeKeyAndVisible];
     
     return YES;

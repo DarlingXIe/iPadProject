@@ -8,7 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		9837AF18349E9B364E9C9B52 /* libPods-XDLBestReservationHD.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 818A494B72606DD0C1CCD50A /* libPods-XDLBestReservationHD.a */; };
-		F7053BC41DFB1D8D00D0A9F6 /* XDLConst.m in Sources */ = {isa = PBXBuildFile; fileRef = F7053BC31DFB1D8D00D0A9F6 /* XDLConst.m */; };
+		F776D56E1DFCA995003067B9 /* HMCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F776D5521DFCA995003067B9 /* HMCategoryViewController.m */; };
+		F776D56F1DFCA995003067B9 /* HMHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F776D5541DFCA995003067B9 /* HMHomeViewController.m */; };
+		F776D5701DFCA995003067B9 /* HMCategoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F776D5571DFCA995003067B9 /* HMCategoryModel.m */; };
+		F776D5711DFCA995003067B9 /* HMDropdownLeftTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F776D55A1DFCA995003067B9 /* HMDropdownLeftTableViewCell.m */; };
+		F776D5721DFCA995003067B9 /* HMDropdownRightTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F776D55C1DFCA995003067B9 /* HMDropdownRightTableViewCell.m */; };
+		F776D5731DFCA995003067B9 /* HMDropdownView.m in Sources */ = {isa = PBXBuildFile; fileRef = F776D55E1DFCA995003067B9 /* HMDropdownView.m */; };
+		F776D5741DFCA995003067B9 /* HMDropdownView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F776D55F1DFCA995003067B9 /* HMDropdownView.xib */; };
+		F776D5751DFCA995003067B9 /* HomeNavView.m in Sources */ = {isa = PBXBuildFile; fileRef = F776D5611DFCA995003067B9 /* HomeNavView.m */; };
+		F776D5761DFCA995003067B9 /* HomeNavView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F776D5621DFCA995003067B9 /* HomeNavView.xib */; };
+		F776D5771DFCA995003067B9 /* UIBarButtonItem+HMCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = F776D5661DFCA995003067B9 /* UIBarButtonItem+HMCategory.m */; };
+		F776D5781DFCA995003067B9 /* UIView+HMCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = F776D5681DFCA995003067B9 /* UIView+HMCategory.m */; };
+		F776D5791DFCA995003067B9 /* HMNavigateController.m in Sources */ = {isa = PBXBuildFile; fileRef = F776D56B1DFCA995003067B9 /* HMNavigateController.m */; };
 		F794604A1DBA977D007B8DF2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F79460491DBA977D007B8DF2 /* main.m */; };
 		F794604D1DBA977D007B8DF2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F794604C1DBA977D007B8DF2 /* AppDelegate.m */; };
 		F79460551DBA977D007B8DF2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F79460541DBA977D007B8DF2 /* Assets.xcassets */; };
@@ -16,23 +27,34 @@
 		F794606F1DBAA520007B8DF2 /* cities.plist in Resources */ = {isa = PBXBuildFile; fileRef = F794606B1DBAA520007B8DF2 /* cities.plist */; };
 		F79460701DBAA520007B8DF2 /* cityGroups.plist in Resources */ = {isa = PBXBuildFile; fileRef = F794606C1DBAA520007B8DF2 /* cityGroups.plist */; };
 		F79460711DBAA520007B8DF2 /* sorts.plist in Resources */ = {isa = PBXBuildFile; fileRef = F794606D1DBAA520007B8DF2 /* sorts.plist */; };
-		F79460741DBAA761007B8DF2 /* XDLHomeCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F79460731DBAA761007B8DF2 /* XDLHomeCollectionViewController.m */; };
-		F79460781DBAB07A007B8DF2 /* XDLNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F79460771DBAB07A007B8DF2 /* XDLNavigationViewController.m */; };
-		F794607B1DBAB09F007B8DF2 /* UIBarButtonItem+XDLCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = F794607A1DBAB09F007B8DF2 /* UIBarButtonItem+XDLCategory.m */; };
-		F794607E1DBAB0C3007B8DF2 /* UIView+XDLCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = F794607D1DBAB0C3007B8DF2 /* UIView+XDLCategory.m */; };
-		F79460811DBAC8C5007B8DF2 /* XDLHomeNavView.m in Sources */ = {isa = PBXBuildFile; fileRef = F79460801DBAC8C4007B8DF2 /* XDLHomeNavView.m */; };
-		F79460831DBAC8E6007B8DF2 /* XDLHomeNavView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F79460821DBAC8E6007B8DF2 /* XDLHomeNavView.xib */; };
-		F79460861DBB011A007B8DF2 /* XDLCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F79460851DBB011A007B8DF2 /* XDLCategoryViewController.m */; };
-		F79460891DBB0821007B8DF2 /* XDLDropdownView.m in Sources */ = {isa = PBXBuildFile; fileRef = F79460881DBB0821007B8DF2 /* XDLDropdownView.m */; };
-		F794608B1DBB083C007B8DF2 /* XDLDropdownView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F794608A1DBB083C007B8DF2 /* XDLDropdownView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		151BCA9147B8E81B5B4D8F0F /* Pods-XDLBestReservationHD.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XDLBestReservationHD.release.xcconfig"; path = "Pods/Target Support Files/Pods-XDLBestReservationHD/Pods-XDLBestReservationHD.release.xcconfig"; sourceTree = "<group>"; };
 		818A494B72606DD0C1CCD50A /* libPods-XDLBestReservationHD.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XDLBestReservationHD.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE0D98DAF17FCF37FA21BDD6 /* Pods-XDLBestReservationHD.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XDLBestReservationHD.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XDLBestReservationHD/Pods-XDLBestReservationHD.debug.xcconfig"; sourceTree = "<group>"; };
-		F7053BC21DFB1D8D00D0A9F6 /* XDLConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDLConst.h; sourceTree = "<group>"; };
-		F7053BC31DFB1D8D00D0A9F6 /* XDLConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XDLConst.m; sourceTree = "<group>"; };
+		F776D5511DFCA995003067B9 /* HMCategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMCategoryViewController.h; sourceTree = "<group>"; };
+		F776D5521DFCA995003067B9 /* HMCategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMCategoryViewController.m; sourceTree = "<group>"; };
+		F776D5531DFCA995003067B9 /* HMHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMHomeViewController.h; sourceTree = "<group>"; };
+		F776D5541DFCA995003067B9 /* HMHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMHomeViewController.m; sourceTree = "<group>"; };
+		F776D5561DFCA995003067B9 /* HMCategoryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMCategoryModel.h; sourceTree = "<group>"; };
+		F776D5571DFCA995003067B9 /* HMCategoryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMCategoryModel.m; sourceTree = "<group>"; };
+		F776D5591DFCA995003067B9 /* HMDropdownLeftTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMDropdownLeftTableViewCell.h; sourceTree = "<group>"; };
+		F776D55A1DFCA995003067B9 /* HMDropdownLeftTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMDropdownLeftTableViewCell.m; sourceTree = "<group>"; };
+		F776D55B1DFCA995003067B9 /* HMDropdownRightTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMDropdownRightTableViewCell.h; sourceTree = "<group>"; };
+		F776D55C1DFCA995003067B9 /* HMDropdownRightTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMDropdownRightTableViewCell.m; sourceTree = "<group>"; };
+		F776D55D1DFCA995003067B9 /* HMDropdownView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMDropdownView.h; sourceTree = "<group>"; };
+		F776D55E1DFCA995003067B9 /* HMDropdownView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMDropdownView.m; sourceTree = "<group>"; };
+		F776D55F1DFCA995003067B9 /* HMDropdownView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HMDropdownView.xib; sourceTree = "<group>"; };
+		F776D5601DFCA995003067B9 /* HomeNavView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeNavView.h; sourceTree = "<group>"; };
+		F776D5611DFCA995003067B9 /* HomeNavView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeNavView.m; sourceTree = "<group>"; };
+		F776D5621DFCA995003067B9 /* HomeNavView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeNavView.xib; sourceTree = "<group>"; };
+		F776D5651DFCA995003067B9 /* UIBarButtonItem+HMCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+HMCategory.h"; sourceTree = "<group>"; };
+		F776D5661DFCA995003067B9 /* UIBarButtonItem+HMCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+HMCategory.m"; sourceTree = "<group>"; };
+		F776D5671DFCA995003067B9 /* UIView+HMCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+HMCategory.h"; sourceTree = "<group>"; };
+		F776D5681DFCA995003067B9 /* UIView+HMCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+HMCategory.m"; sourceTree = "<group>"; };
+		F776D56A1DFCA995003067B9 /* HMNavigateController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMNavigateController.h; sourceTree = "<group>"; };
+		F776D56B1DFCA995003067B9 /* HMNavigateController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMNavigateController.m; sourceTree = "<group>"; };
 		F79460451DBA977D007B8DF2 /* XDLBestReservationHD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XDLBestReservationHD.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F79460491DBA977D007B8DF2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F794604B1DBA977D007B8DF2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -43,23 +65,7 @@
 		F794606B1DBAA520007B8DF2 /* cities.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = cities.plist; sourceTree = "<group>"; };
 		F794606C1DBAA520007B8DF2 /* cityGroups.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = cityGroups.plist; sourceTree = "<group>"; };
 		F794606D1DBAA520007B8DF2 /* sorts.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = sorts.plist; sourceTree = "<group>"; };
-		F79460721DBAA761007B8DF2 /* XDLHomeCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDLHomeCollectionViewController.h; sourceTree = "<group>"; };
-		F79460731DBAA761007B8DF2 /* XDLHomeCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XDLHomeCollectionViewController.m; sourceTree = "<group>"; };
 		F79460751DBAABF4007B8DF2 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
-		F79460761DBAB07A007B8DF2 /* XDLNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDLNavigationViewController.h; sourceTree = "<group>"; };
-		F79460771DBAB07A007B8DF2 /* XDLNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XDLNavigationViewController.m; sourceTree = "<group>"; };
-		F79460791DBAB09F007B8DF2 /* UIBarButtonItem+XDLCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+XDLCategory.h"; sourceTree = "<group>"; };
-		F794607A1DBAB09F007B8DF2 /* UIBarButtonItem+XDLCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+XDLCategory.m"; sourceTree = "<group>"; };
-		F794607C1DBAB0C3007B8DF2 /* UIView+XDLCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+XDLCategory.h"; sourceTree = "<group>"; };
-		F794607D1DBAB0C3007B8DF2 /* UIView+XDLCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+XDLCategory.m"; sourceTree = "<group>"; };
-		F794607F1DBAC8C4007B8DF2 /* XDLHomeNavView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDLHomeNavView.h; sourceTree = "<group>"; };
-		F79460801DBAC8C4007B8DF2 /* XDLHomeNavView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XDLHomeNavView.m; sourceTree = "<group>"; };
-		F79460821DBAC8E6007B8DF2 /* XDLHomeNavView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XDLHomeNavView.xib; sourceTree = "<group>"; };
-		F79460841DBB011A007B8DF2 /* XDLCategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDLCategoryViewController.h; sourceTree = "<group>"; };
-		F79460851DBB011A007B8DF2 /* XDLCategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XDLCategoryViewController.m; sourceTree = "<group>"; };
-		F79460871DBB0821007B8DF2 /* XDLDropdownView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDLDropdownView.h; sourceTree = "<group>"; };
-		F79460881DBB0821007B8DF2 /* XDLDropdownView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XDLDropdownView.m; sourceTree = "<group>"; };
-		F794608A1DBB083C007B8DF2 /* XDLDropdownView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XDLDropdownView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +97,107 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F776D54E1DFCA995003067B9 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				F776D54F1DFCA995003067B9 /* Home(首页) */,
+				F776D5631DFCA995003067B9 /* Main(主要) */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		F776D54F1DFCA995003067B9 /* Home(首页) */ = {
+			isa = PBXGroup;
+			children = (
+				F776D5501DFCA995003067B9 /* Controller */,
+				F776D5551DFCA995003067B9 /* Model */,
+				F776D5581DFCA995003067B9 /* View */,
+			);
+			path = "Home(首页)";
+			sourceTree = "<group>";
+		};
+		F776D5501DFCA995003067B9 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F776D5511DFCA995003067B9 /* HMCategoryViewController.h */,
+				F776D5521DFCA995003067B9 /* HMCategoryViewController.m */,
+				F776D5531DFCA995003067B9 /* HMHomeViewController.h */,
+				F776D5541DFCA995003067B9 /* HMHomeViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F776D5551DFCA995003067B9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F776D5561DFCA995003067B9 /* HMCategoryModel.h */,
+				F776D5571DFCA995003067B9 /* HMCategoryModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F776D5581DFCA995003067B9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F776D5591DFCA995003067B9 /* HMDropdownLeftTableViewCell.h */,
+				F776D55A1DFCA995003067B9 /* HMDropdownLeftTableViewCell.m */,
+				F776D55B1DFCA995003067B9 /* HMDropdownRightTableViewCell.h */,
+				F776D55C1DFCA995003067B9 /* HMDropdownRightTableViewCell.m */,
+				F776D55D1DFCA995003067B9 /* HMDropdownView.h */,
+				F776D55E1DFCA995003067B9 /* HMDropdownView.m */,
+				F776D55F1DFCA995003067B9 /* HMDropdownView.xib */,
+				F776D5601DFCA995003067B9 /* HomeNavView.h */,
+				F776D5611DFCA995003067B9 /* HomeNavView.m */,
+				F776D5621DFCA995003067B9 /* HomeNavView.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F776D5631DFCA995003067B9 /* Main(主要) */ = {
+			isa = PBXGroup;
+			children = (
+				F776D5641DFCA995003067B9 /* Category */,
+				F776D5691DFCA995003067B9 /* Common */,
+				F776D56C1DFCA995003067B9 /* Lib */,
+				F776D56D1DFCA995003067B9 /* Tool */,
+			);
+			path = "Main(主要)";
+			sourceTree = "<group>";
+		};
+		F776D5641DFCA995003067B9 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				F776D5651DFCA995003067B9 /* UIBarButtonItem+HMCategory.h */,
+				F776D5661DFCA995003067B9 /* UIBarButtonItem+HMCategory.m */,
+				F776D5671DFCA995003067B9 /* UIView+HMCategory.h */,
+				F776D5681DFCA995003067B9 /* UIView+HMCategory.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		F776D5691DFCA995003067B9 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				F776D56A1DFCA995003067B9 /* HMNavigateController.h */,
+				F776D56B1DFCA995003067B9 /* HMNavigateController.m */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		F776D56C1DFCA995003067B9 /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Lib;
+			sourceTree = "<group>";
+		};
+		F776D56D1DFCA995003067B9 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
 		F794603C1DBA977D007B8DF2 = {
 			isa = PBXGroup;
 			children = (
@@ -112,7 +219,7 @@
 		F79460471DBA977D007B8DF2 /* XDLBestReservationHD */ = {
 			isa = PBXGroup;
 			children = (
-				F794605F1DBAA2D4007B8DF2 /* Classes */,
+				F776D54E1DFCA995003067B9 /* Classes */,
 				F794604B1DBA977D007B8DF2 /* AppDelegate.h */,
 				F794604C1DBA977D007B8DF2 /* AppDelegate.m */,
 				F79460481DBA977D007B8DF2 /* Supporting Files */,
@@ -130,103 +237,6 @@
 				F79460541DBA977D007B8DF2 /* Assets.xcassets */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		F794605F1DBAA2D4007B8DF2 /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				F79460601DBAA2D4007B8DF2 /* Home */,
-				F79460641DBAA2D4007B8DF2 /* Main */,
-			);
-			path = Classes;
-			sourceTree = "<group>";
-		};
-		F79460601DBAA2D4007B8DF2 /* Home */ = {
-			isa = PBXGroup;
-			children = (
-				F79460611DBAA2D4007B8DF2 /* Controller */,
-				F79460621DBAA2D4007B8DF2 /* Model */,
-				F79460631DBAA2D4007B8DF2 /* View */,
-			);
-			path = Home;
-			sourceTree = "<group>";
-		};
-		F79460611DBAA2D4007B8DF2 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				F79460721DBAA761007B8DF2 /* XDLHomeCollectionViewController.h */,
-				F79460731DBAA761007B8DF2 /* XDLHomeCollectionViewController.m */,
-				F79460841DBB011A007B8DF2 /* XDLCategoryViewController.h */,
-				F79460851DBB011A007B8DF2 /* XDLCategoryViewController.m */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		F79460621DBAA2D4007B8DF2 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		F79460631DBAA2D4007B8DF2 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				F794607F1DBAC8C4007B8DF2 /* XDLHomeNavView.h */,
-				F79460801DBAC8C4007B8DF2 /* XDLHomeNavView.m */,
-				F79460821DBAC8E6007B8DF2 /* XDLHomeNavView.xib */,
-				F79460871DBB0821007B8DF2 /* XDLDropdownView.h */,
-				F79460881DBB0821007B8DF2 /* XDLDropdownView.m */,
-				F794608A1DBB083C007B8DF2 /* XDLDropdownView.xib */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		F79460641DBAA2D4007B8DF2 /* Main */ = {
-			isa = PBXGroup;
-			children = (
-				F79460651DBAA2D4007B8DF2 /* Category */,
-				F79460661DBAA2D4007B8DF2 /* Common */,
-				F79460671DBAA2D4007B8DF2 /* Lib */,
-				F79460681DBAA2D4007B8DF2 /* Tool */,
-			);
-			path = Main;
-			sourceTree = "<group>";
-		};
-		F79460651DBAA2D4007B8DF2 /* Category */ = {
-			isa = PBXGroup;
-			children = (
-				F79460791DBAB09F007B8DF2 /* UIBarButtonItem+XDLCategory.h */,
-				F794607A1DBAB09F007B8DF2 /* UIBarButtonItem+XDLCategory.m */,
-				F794607C1DBAB0C3007B8DF2 /* UIView+XDLCategory.h */,
-				F794607D1DBAB0C3007B8DF2 /* UIView+XDLCategory.m */,
-			);
-			path = Category;
-			sourceTree = "<group>";
-		};
-		F79460661DBAA2D4007B8DF2 /* Common */ = {
-			isa = PBXGroup;
-			children = (
-				F79460761DBAB07A007B8DF2 /* XDLNavigationViewController.h */,
-				F79460771DBAB07A007B8DF2 /* XDLNavigationViewController.m */,
-			);
-			path = Common;
-			sourceTree = "<group>";
-		};
-		F79460671DBAA2D4007B8DF2 /* Lib */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Lib;
-			sourceTree = "<group>";
-		};
-		F79460681DBAA2D4007B8DF2 /* Tool */ = {
-			isa = PBXGroup;
-			children = (
-				F7053BC21DFB1D8D00D0A9F6 /* XDLConst.h */,
-				F7053BC31DFB1D8D00D0A9F6 /* XDLConst.m */,
-			);
-			path = Tool;
 			sourceTree = "<group>";
 		};
 		F79460691DBAA520007B8DF2 /* Plist */ = {
@@ -302,12 +312,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F79460831DBAC8E6007B8DF2 /* XDLHomeNavView.xib in Resources */,
-				F794608B1DBB083C007B8DF2 /* XDLDropdownView.xib in Resources */,
 				F794606F1DBAA520007B8DF2 /* cities.plist in Resources */,
 				F794606E1DBAA520007B8DF2 /* categories.plist in Resources */,
+				F776D5761DFCA995003067B9 /* HomeNavView.xib in Resources */,
 				F79460711DBAA520007B8DF2 /* sorts.plist in Resources */,
 				F79460551DBA977D007B8DF2 /* Assets.xcassets in Resources */,
+				F776D5741DFCA995003067B9 /* HMDropdownView.xib in Resources */,
 				F79460701DBAA520007B8DF2 /* cityGroups.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -367,16 +377,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F79460811DBAC8C5007B8DF2 /* XDLHomeNavView.m in Sources */,
+				F776D5731DFCA995003067B9 /* HMDropdownView.m in Sources */,
 				F794604D1DBA977D007B8DF2 /* AppDelegate.m in Sources */,
-				F79460741DBAA761007B8DF2 /* XDLHomeCollectionViewController.m in Sources */,
-				F79460861DBB011A007B8DF2 /* XDLCategoryViewController.m in Sources */,
+				F776D5701DFCA995003067B9 /* HMCategoryModel.m in Sources */,
 				F794604A1DBA977D007B8DF2 /* main.m in Sources */,
-				F794607B1DBAB09F007B8DF2 /* UIBarButtonItem+XDLCategory.m in Sources */,
-				F79460891DBB0821007B8DF2 /* XDLDropdownView.m in Sources */,
-				F79460781DBAB07A007B8DF2 /* XDLNavigationViewController.m in Sources */,
-				F7053BC41DFB1D8D00D0A9F6 /* XDLConst.m in Sources */,
-				F794607E1DBAB0C3007B8DF2 /* UIView+XDLCategory.m in Sources */,
+				F776D5721DFCA995003067B9 /* HMDropdownRightTableViewCell.m in Sources */,
+				F776D5791DFCA995003067B9 /* HMNavigateController.m in Sources */,
+				F776D5771DFCA995003067B9 /* UIBarButtonItem+HMCategory.m in Sources */,
+				F776D56F1DFCA995003067B9 /* HMHomeViewController.m in Sources */,
+				F776D5711DFCA995003067B9 /* HMDropdownLeftTableViewCell.m in Sources */,
+				F776D56E1DFCA995003067B9 /* HMCategoryViewController.m in Sources */,
+				F776D5781DFCA995003067B9 /* UIView+HMCategory.m in Sources */,
+				F776D5751DFCA995003067B9 /* HomeNavView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
