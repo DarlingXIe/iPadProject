@@ -25,5 +25,4 @@
 /** 子分类数据*/
 @property (nonatomic, strong) NSArray *subcategories;
 
-
 @end

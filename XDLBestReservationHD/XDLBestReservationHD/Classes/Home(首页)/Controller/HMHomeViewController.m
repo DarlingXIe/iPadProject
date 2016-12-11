@@ -9,8 +9,13 @@
 #import "HMHomeViewController.h"
 #import "HomeNavView.h"
 #import "HMCategoryViewController.h"
-
+#import "XDLDistrictViewController.h"
+#import "YYModel.h"
+#import "XDLDistrictModel.h"
+#import "XDLCityModel.h"
 @interface HMHomeViewController ()
+
+@property (nonatomic, copy) NSString *selectCityName;
 
 @end
 
@@ -57,17 +62,17 @@ static NSString * const reuseIdentifier = @"Cell";
     //2. 分类
     HomeNavView *categoryNavView = [HomeNavView homeNavView];
     UIBarButtonItem *categoryItem = [[UIBarButtonItem alloc] initWithCustomView:categoryNavView];
-    // 添加导航栏View的点击事件 继承了UIControl, 就会有下面的方法
+    // 添加导航栏View的点击wssw事件 继承了UIControl, 就会有下面的方法
     // 这句代码有点类似于注册通知
     [categoryNavView addTarget:self action:@selector(categoryClick) forControlEvents:UIControlEventTouchUpInside];
-    
     //3. 区域
     HomeNavView *districtNavView = [HomeNavView homeNavView];
     UIBarButtonItem *districtItem = [[UIBarButtonItem alloc] initWithCustomView:districtNavView];
-    
+    [districtNavView addTarget:self action:@selector(districtClick) forControlEvents:UIControlEventTouchUpInside];
     //4. 排序
     HomeNavView *sortNavView = [HomeNavView homeNavView];
     UIBarButtonItem *sortItem = [[UIBarButtonItem alloc] initWithCustomView:sortNavView];
+    //[categoryNavView addTarget:self action:@selector(sortClick) forControlEvents:UIControlEventTouchUpInside];
     
     self.navigationItem.leftBarButtonItems = @[logoItem, categoryItem, districtItem, sortItem];
 }
@@ -107,20 +112,42 @@ static NSString * const reuseIdentifier = @"Cell";
     [self presentViewController:categoryVC animated:YES completion:nil];
     
 }
-
+#pragma mark -区域按钮点击方法
+-(void)districtClick{
+    NSLog(@"区域");
+    //1. 创建控制器
+    XDLDistrictViewController *districtVC = [XDLDistrictViewController new];
+    NSArray * districtVc = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"cities.plist" ofType:nil]];
+    NSArray * cityArray = [NSArray yy_modelArrayWithClass:NSClassFromString(@"XDLCityModel") json:districtVc];
+    for (XDLCityModel * cityModel in cityArray){
+        if([self.selectCityName isEqualToString:cityModel.name]){
+            districtVC.districtModel = cityModel.districts;
+        }
+    }
+    //2. 设置以popover方式弹出
+    districtVC.modalPresentationStyle = UIModalPresentationPopover;
+    //3. 获取Popover
+    UIPopoverPresentationController *popoverC = districtVC.popoverPresentationController;
+    //4. 设置BarButtonItem属性
+    popoverC.barButtonItem = self.navigationItem.leftBarButtonItems[2];
+    //5. 模态弹出
+    [self presentViewController:districtVC animated:YES completion:nil];
+    
+}
+#pragma mark - 排序按钮点击方法
+-(void)sortClick{
+    NSLog(@"排序");
+}
 #pragma mark 搜索按钮点击方法
 - (void)searchItemClick
 {
     NSLog(@"搜索");
 }
-
 #pragma mark 地图按钮点击方法
 - (void)mapItemClick
 {
     NSLog(@"地图");
 }
-
-
 #pragma mark <UICollectionViewDataSource>
 //- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
 //#warning Incomplete implementation, return the number of sections
@@ -135,7 +162,6 @@ static NSString * const reuseIdentifier = @"Cell";
 //
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
-    
     // Configure the cell
     
     return cell;

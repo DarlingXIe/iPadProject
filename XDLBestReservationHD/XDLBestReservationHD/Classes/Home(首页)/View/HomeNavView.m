@@ -5,7 +5,6 @@
 //  Created by heima on 16/9/14.
 //  Copyright © 2016年 heima. All rights reserved.
 //
-
 #import "HomeNavView.h"
 
 @implementation HomeNavView
@@ -15,17 +14,12 @@
 {
     return [[NSBundle mainBundle] loadNibNamed:@"HomeNavView" owner:nil options:nil].firstObject;
 }
-
 //在内部实现按钮点击方法
 - (IBAction)buttonClick:(id)sender {
-    
     //当点击这个按钮时, 发出按钮被点击的事件
-    
     //这里相当于, 点击了按钮之后, 发出了通知
     [self sendActionsForControlEvents:UIControlEventTouchUpInside];
-    
 }
-
 - (void)awakeFromNib
 {
     [super awakeFromNib];

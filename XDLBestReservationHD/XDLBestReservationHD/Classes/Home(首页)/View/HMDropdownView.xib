@@ -49,13 +49,13 @@
                 <outlet property="leftTableView" destination="8HC-Ur-6sG" id="9Ii-qH-SIN"/>
                 <outlet property="rightTableView" destination="cGw-Lf-BNq" id="1mQ-Sg-uOf"/>
             </connections>
-            <point key="canvasLocation" x="3" y="-71"/>
+            <point key="canvasLocation" x="-152" y="-375"/>
         </view>
         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="U1D-FE-4wB">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-            <point key="canvasLocation" x="391" y="-374"/>
+            <point key="canvasLocation" x="265" y="-217"/>
         </tableView>
     </objects>
 </document>

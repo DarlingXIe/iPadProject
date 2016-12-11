@@ -20,6 +20,13 @@
 		F776D5771DFCA995003067B9 /* UIBarButtonItem+HMCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = F776D5661DFCA995003067B9 /* UIBarButtonItem+HMCategory.m */; };
 		F776D5781DFCA995003067B9 /* UIView+HMCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = F776D5681DFCA995003067B9 /* UIView+HMCategory.m */; };
 		F776D5791DFCA995003067B9 /* HMNavigateController.m in Sources */ = {isa = PBXBuildFile; fileRef = F776D56B1DFCA995003067B9 /* HMNavigateController.m */; };
+		F776D57D1DFCD2BE003067B9 /* XDLDistrictViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F776D57B1DFCD2BE003067B9 /* XDLDistrictViewController.m */; };
+		F776D57E1DFCD2BE003067B9 /* XDLDistrictViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F776D57C1DFCD2BE003067B9 /* XDLDistrictViewController.xib */; };
+		F776D5811DFCD304003067B9 /* XDLDistrictModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F776D5801DFCD304003067B9 /* XDLDistrictModel.m */; };
+		F776D5841DFCF3B1003067B9 /* XDLCityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F776D5831DFCF3B1003067B9 /* XDLCityModel.m */; };
+		F776D5881DFD8547003067B9 /* XDLCityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F776D5861DFD8547003067B9 /* XDLCityViewController.m */; };
+		F776D5891DFD8547003067B9 /* XDLCityViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F776D5871DFD8547003067B9 /* XDLCityViewController.xib */; };
+		F776D58C1DFD8572003067B9 /* XDLCityGroupModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F776D58B1DFD8572003067B9 /* XDLCityGroupModel.m */; };
 		F794604A1DBA977D007B8DF2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F79460491DBA977D007B8DF2 /* main.m */; };
 		F794604D1DBA977D007B8DF2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F794604C1DBA977D007B8DF2 /* AppDelegate.m */; };
 		F79460551DBA977D007B8DF2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F79460541DBA977D007B8DF2 /* Assets.xcassets */; };
@@ -55,6 +62,18 @@
 		F776D5681DFCA995003067B9 /* UIView+HMCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+HMCategory.m"; sourceTree = "<group>"; };
 		F776D56A1DFCA995003067B9 /* HMNavigateController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMNavigateController.h; sourceTree = "<group>"; };
 		F776D56B1DFCA995003067B9 /* HMNavigateController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMNavigateController.m; sourceTree = "<group>"; };
+		F776D57A1DFCD2BE003067B9 /* XDLDistrictViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDLDistrictViewController.h; sourceTree = "<group>"; };
+		F776D57B1DFCD2BE003067B9 /* XDLDistrictViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XDLDistrictViewController.m; sourceTree = "<group>"; };
+		F776D57C1DFCD2BE003067B9 /* XDLDistrictViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XDLDistrictViewController.xib; sourceTree = "<group>"; };
+		F776D57F1DFCD304003067B9 /* XDLDistrictModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDLDistrictModel.h; sourceTree = "<group>"; };
+		F776D5801DFCD304003067B9 /* XDLDistrictModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XDLDistrictModel.m; sourceTree = "<group>"; };
+		F776D5821DFCF3B1003067B9 /* XDLCityModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDLCityModel.h; sourceTree = "<group>"; };
+		F776D5831DFCF3B1003067B9 /* XDLCityModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XDLCityModel.m; sourceTree = "<group>"; };
+		F776D5851DFD8547003067B9 /* XDLCityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDLCityViewController.h; sourceTree = "<group>"; };
+		F776D5861DFD8547003067B9 /* XDLCityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XDLCityViewController.m; sourceTree = "<group>"; };
+		F776D5871DFD8547003067B9 /* XDLCityViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XDLCityViewController.xib; sourceTree = "<group>"; };
+		F776D58A1DFD8572003067B9 /* XDLCityGroupModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDLCityGroupModel.h; sourceTree = "<group>"; };
+		F776D58B1DFD8572003067B9 /* XDLCityGroupModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XDLCityGroupModel.m; sourceTree = "<group>"; };
 		F79460451DBA977D007B8DF2 /* XDLBestReservationHD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XDLBestReservationHD.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F79460491DBA977D007B8DF2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F794604B1DBA977D007B8DF2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -123,6 +142,12 @@
 				F776D5521DFCA995003067B9 /* HMCategoryViewController.m */,
 				F776D5531DFCA995003067B9 /* HMHomeViewController.h */,
 				F776D5541DFCA995003067B9 /* HMHomeViewController.m */,
+				F776D57A1DFCD2BE003067B9 /* XDLDistrictViewController.h */,
+				F776D57B1DFCD2BE003067B9 /* XDLDistrictViewController.m */,
+				F776D57C1DFCD2BE003067B9 /* XDLDistrictViewController.xib */,
+				F776D5851DFD8547003067B9 /* XDLCityViewController.h */,
+				F776D5861DFD8547003067B9 /* XDLCityViewController.m */,
+				F776D5871DFD8547003067B9 /* XDLCityViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -132,6 +157,12 @@
 			children = (
 				F776D5561DFCA995003067B9 /* HMCategoryModel.h */,
 				F776D5571DFCA995003067B9 /* HMCategoryModel.m */,
+				F776D57F1DFCD304003067B9 /* XDLDistrictModel.h */,
+				F776D5801DFCD304003067B9 /* XDLDistrictModel.m */,
+				F776D5821DFCF3B1003067B9 /* XDLCityModel.h */,
+				F776D5831DFCF3B1003067B9 /* XDLCityModel.m */,
+				F776D58A1DFD8572003067B9 /* XDLCityGroupModel.h */,
+				F776D58B1DFD8572003067B9 /* XDLCityGroupModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -315,7 +346,9 @@
 				F794606F1DBAA520007B8DF2 /* cities.plist in Resources */,
 				F794606E1DBAA520007B8DF2 /* categories.plist in Resources */,
 				F776D5761DFCA995003067B9 /* HomeNavView.xib in Resources */,
+				F776D57E1DFCD2BE003067B9 /* XDLDistrictViewController.xib in Resources */,
 				F79460711DBAA520007B8DF2 /* sorts.plist in Resources */,
+				F776D5891DFD8547003067B9 /* XDLCityViewController.xib in Resources */,
 				F79460551DBA977D007B8DF2 /* Assets.xcassets in Resources */,
 				F776D5741DFCA995003067B9 /* HMDropdownView.xib in Resources */,
 				F79460701DBAA520007B8DF2 /* cityGroups.plist in Resources */,
@@ -379,12 +412,17 @@
 			files = (
 				F776D5731DFCA995003067B9 /* HMDropdownView.m in Sources */,
 				F794604D1DBA977D007B8DF2 /* AppDelegate.m in Sources */,
+				F776D5881DFD8547003067B9 /* XDLCityViewController.m in Sources */,
+				F776D5811DFCD304003067B9 /* XDLDistrictModel.m in Sources */,
 				F776D5701DFCA995003067B9 /* HMCategoryModel.m in Sources */,
+				F776D5841DFCF3B1003067B9 /* XDLCityModel.m in Sources */,
 				F794604A1DBA977D007B8DF2 /* main.m in Sources */,
 				F776D5721DFCA995003067B9 /* HMDropdownRightTableViewCell.m in Sources */,
+				F776D58C1DFD8572003067B9 /* XDLCityGroupModel.m in Sources */,
 				F776D5791DFCA995003067B9 /* HMNavigateController.m in Sources */,
 				F776D5771DFCA995003067B9 /* UIBarButtonItem+HMCategory.m in Sources */,
 				F776D56F1DFCA995003067B9 /* HMHomeViewController.m in Sources */,
+				F776D57D1DFCD2BE003067B9 /* XDLDistrictViewController.m in Sources */,
 				F776D5711DFCA995003067B9 /* HMDropdownLeftTableViewCell.m in Sources */,
 				F776D56E1DFCA995003067B9 /* HMCategoryViewController.m in Sources */,
 				F776D5781DFCA995003067B9 /* UIView+HMCategory.m in Sources */,
