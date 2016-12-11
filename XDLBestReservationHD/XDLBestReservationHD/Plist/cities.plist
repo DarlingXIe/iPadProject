@@ -474,57 +474,6 @@
 	</dict>
 	<dict>
 		<key>name</key>
-		<string>安阳</string>
-		<key>pinYin</key>
-		<string>anyang</string>
-		<key>pinYinHead</key>
-		<string>ay</string>
-		<key>districts</key>
-		<array>
-			<dict>
-				<key>name</key>
-				<string>全部</string>
-			</dict>
-			<dict>
-				<key>name</key>
-				<string>殷都区</string>
-			</dict>
-			<dict>
-				<key>name</key>
-				<string>文峰区</string>
-			</dict>
-			<dict>
-				<key>name</key>
-				<string>林州市</string>
-			</dict>
-			<dict>
-				<key>name</key>
-				<string>龙安区</string>
-			</dict>
-			<dict>
-				<key>name</key>
-				<string>北关区</string>
-			</dict>
-			<dict>
-				<key>name</key>
-				<string>汤阴县</string>
-			</dict>
-			<dict>
-				<key>name</key>
-				<string>安阳县</string>
-			</dict>
-			<dict>
-				<key>name</key>
-				<string>内黄县</string>
-			</dict>
-			<dict>
-				<key>name</key>
-				<string>滑县</string>
-			</dict>
-		</array>
-	</dict>
-	<dict>
-		<key>name</key>
 		<string>白城</string>
 		<key>pinYin</key>
 		<string>baicheng</string>

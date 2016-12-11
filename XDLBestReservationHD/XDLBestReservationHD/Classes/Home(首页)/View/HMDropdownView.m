@@ -115,12 +115,14 @@
         }
     }
 }
+
+
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if(self.categoryArray){
         if (tableView == self.leftTableView) {
         //1. 记录左边选中的模型
         self.selectCategoryLeftModel = self.categoryArray[indexPath.row];
-        
         //2. 刷新右边数据
         [self.rightTableView reloadData];
         }
@@ -128,6 +130,7 @@
         if (tableView == self.leftTableView) {
             //1. 记录左边选中的模型
           self.selectDistrictModel = self.districtArray[indexPath.row];
+            
         }
     }
     //2. 刷新右边数据

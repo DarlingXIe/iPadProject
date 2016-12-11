@@ -11,6 +11,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="XDLCityViewController">
             <connections>
+                <outlet property="cityGroupTable" destination="ZGZ-rw-dVx" id="hel-Km-DH8"/>
+                <outlet property="coverButton" destination="KyW-la-ixK" id="cwK-ow-3S6"/>
+                <outlet property="searchBar" destination="R9y-2W-60t" id="Mty-np-RYi"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -22,15 +25,24 @@
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ZGZ-rw-dVx">
                     <rect key="frame" x="0.0" y="59" width="375" height="608"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="5pQ-Dr-E3i"/>
+                        <outlet property="delegate" destination="-1" id="W1i-pY-kTc"/>
+                    </connections>
                 </tableView>
-                <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KyW-la-ixK" userLabel="CoverButton">
-                    <rect key="frame" x="0.0" y="59" width="375" height="608"/>
-                    <state key="normal" title="Button"/>
-                </button>
                 <searchBar contentMode="redraw" placeholder="请输入城市名或拼音" backgroundImage="bg_login_textfield" translatesAutoresizingMaskIntoConstraints="NO" id="R9y-2W-60t">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                     <textInputTraits key="textInputTraits"/>
                 </searchBar>
+                <button opaque="NO" alpha="0.0" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KyW-la-ixK" userLabel="CoverButton">
+                    <rect key="frame" x="0.0" y="59" width="375" height="608"/>
+                    <state key="normal">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="coverButtonClick:" destination="-1" eventType="touchUpInside" id="eYj-t9-Cm8"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>

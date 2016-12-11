@@ -7,8 +7,12 @@
 //
 #import "UIBarButtonItem+HMCategory.h"
 #import "UIView+HMCategory.h"
-
+#import "YYModel.h"
+#import "Masonry.h"
 #define XDLColor(r,g,b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1];
+#define XDLTintColor XDLColor(94, 185, 173)
+
+#define XDLNotificationCenter [NSNotificationCenter defaultCenter]
 
 /** NSLog 输出宏*/ //macro definition
 #ifdef DEBUG

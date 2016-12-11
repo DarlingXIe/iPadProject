@@ -13,6 +13,7 @@
 #import "YYModel.h"
 #import "XDLDistrictModel.h"
 #import "XDLCityModel.h"
+#import "XDLConst.h"
 @interface HMHomeViewController ()
 
 @property (nonatomic, copy) NSString *selectCityName;
@@ -41,12 +42,24 @@ static NSString * const reuseIdentifier = @"Cell";
     
     // 设置左边导航栏按钮
     [self setupLeftNav];
-    
     // 设置右边导航栏按钮
     [self setupRightNav];
+    
+    [XDLNotificationCenter addObserver:self selector:@selector(cityVCDidChangeNotificaiton:) name:XDLCityDidChangeNotifacation object:nil];
+    
 }
-
-
+#pragma mark - 通知
+#pragma mark - 城市选择通知
+-(void) cityVCDidChangeNotificaiton:(NSNotification *)notification{
+    
+    self.selectCityName = notification.userInfo[XDLCityNameKey];
+    
+}
+#pragma mark -  移除通知
+- (void)dealloc
+{
+    [XDLNotificationCenter removeObserver:self];
+}
 #pragma mark - 导航栏设置
 
 #pragma mark 设置左边导航栏按钮

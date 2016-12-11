@@ -8,5 +8,5 @@ target 'XDLBestReservationHD' do
   # Pods for XDLBestReservationHD
 
 pod 'YYModel'
-
+pod 'Masonry'
 end
