@@ -34,6 +34,16 @@
     return [nib instantiateWithOwner:nil options:nil][0];
 }
 
+-(void)setDistrictArray:(NSArray *)districtArray{
+    
+    _districtArray = districtArray;
+    [self.leftTableView reloadData];
+    
+    self.selectDistrictModel = nil;
+    [self.rightTableView reloadData];
+}
+
+
 - (void)awakeFromNib
 {
     [super awakeFromNib];
@@ -89,7 +99,6 @@
         NSArray *categoryArray = self.selectCategoryLeftModel.subcategories;
         cell.textLabel.text = categoryArray[indexPath.row];
         return cell;
-        
         }
     }else{
         if (tableView == self.leftTableView) {

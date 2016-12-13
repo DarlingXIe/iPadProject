@@ -12,15 +12,115 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="XDLHomeCollectionViewCell">
-            <rect key="frame" x="0.0" y="0.0" width="236" height="246"/>
+            <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="236" height="246"/>
+                <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_dealcell" translatesAutoresizingMaskIntoConstraints="NO" id="PlB-VI-I5j">
+                        <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder_deal" translatesAutoresizingMaskIntoConstraints="NO" id="QdG-Eu-hvR">
+                        <rect key="frame" x="15" y="10" width="270" height="170"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="170" id="taX-tQ-7OW"/>
+                        </constraints>
+                    </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ahc-J2-qzB">
+                        <rect key="frame" x="15" y="190" width="270" height="100"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="电脑售价" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LAl-XO-8uM" userLabel="Title Label">
+                                <rect key="frame" x="8" y="8" width="262" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="dfdfdfdfddfdfdfdsfdsfdfdfdfdfdfdfdfdffdfdfdfdfdfdfdfdfdfdfdfdf" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e9u-1v-ixh" userLabel="Desc Label">
+                                <rect key="frame" x="8" y="37" width="254" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="4Lx-qm-bDa"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$ 999" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h4j-Es-In7" userLabel="Last Price Label">
+                                <rect key="frame" x="60" y="77.5" width="37" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$ 99" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fPj-Ta-jXk" userLabel="Current Price Label">
+                                <rect key="frame" x="8" y="75" width="36" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.13421277919999999" blue="0.2187506391" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="已售:9999" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IsI-uL-i13" userLabel="Purchase Count">
+                                <rect key="frame" x="198.5" y="78" width="63.5" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="IsI-uL-i13" secondAttribute="trailing" constant="8" id="2JT-Zj-5fQ"/>
+                            <constraint firstItem="h4j-Es-In7" firstAttribute="centerY" secondItem="fPj-Ta-jXk" secondAttribute="centerY" id="6Ac-LV-Fay"/>
+                            <constraint firstItem="fPj-Ta-jXk" firstAttribute="leading" secondItem="ahc-J2-qzB" secondAttribute="leading" constant="8" id="6gO-FG-n4c"/>
+                            <constraint firstAttribute="trailing" secondItem="LAl-XO-8uM" secondAttribute="trailing" id="98M-v7-cYV"/>
+                            <constraint firstAttribute="bottom" secondItem="fPj-Ta-jXk" secondAttribute="bottom" constant="4" id="9JI-q6-Rgr"/>
+                            <constraint firstItem="fPj-Ta-jXk" firstAttribute="top" secondItem="e9u-1v-ixh" secondAttribute="bottom" constant="8" id="EHi-U5-jNQ"/>
+                            <constraint firstItem="e9u-1v-ixh" firstAttribute="leading" secondItem="LAl-XO-8uM" secondAttribute="leading" id="Hk5-wW-aa9"/>
+                            <constraint firstItem="h4j-Es-In7" firstAttribute="leading" secondItem="fPj-Ta-jXk" secondAttribute="trailing" constant="16" id="Jmf-HX-N70"/>
+                            <constraint firstItem="IsI-uL-i13" firstAttribute="centerY" secondItem="h4j-Es-In7" secondAttribute="centerY" id="NhC-du-lrC"/>
+                            <constraint firstItem="LAl-XO-8uM" firstAttribute="leading" secondItem="ahc-J2-qzB" secondAttribute="leading" constant="8" id="Yn6-xv-ZGS"/>
+                            <constraint firstItem="e9u-1v-ixh" firstAttribute="top" secondItem="LAl-XO-8uM" secondAttribute="bottom" constant="8" id="efv-RN-kiH"/>
+                            <constraint firstItem="LAl-XO-8uM" firstAttribute="top" secondItem="ahc-J2-qzB" secondAttribute="top" constant="8" id="gli-uf-i9u"/>
+                            <constraint firstAttribute="trailing" secondItem="e9u-1v-ixh" secondAttribute="trailing" constant="8" id="kGl-av-9cJ"/>
+                        </constraints>
+                    </view>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_deal_new" translatesAutoresizingMaskIntoConstraints="NO" id="eo7-39-8oE" userLabel="NewShopImage">
+                        <rect key="frame" x="0.0" y="0.0" width="38" height="24"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="38" id="gku-5c-mtF"/>
+                            <constraint firstAttribute="height" constant="24" id="nMs-ez-Rel"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
             </view>
-            <color key="backgroundColor" red="1" green="0.13421277919999999" blue="0.2187506391" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="QdG-Eu-hvR" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="7Jd-pp-B3C"/>
+                <constraint firstItem="QdG-Eu-hvR" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="15" id="CQE-Qe-9ZQ"/>
+                <constraint firstAttribute="bottom" secondItem="ahc-J2-qzB" secondAttribute="bottom" constant="10" id="CwX-6e-Bdo"/>
+                <constraint firstItem="eo7-39-8oE" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="DDM-vL-LRD"/>
+                <constraint firstItem="PlB-VI-I5j" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Dnb-bF-m3E"/>
+                <constraint firstItem="ahc-J2-qzB" firstAttribute="top" secondItem="QdG-Eu-hvR" secondAttribute="bottom" constant="10" id="JYy-Mg-Vcw"/>
+                <constraint firstAttribute="trailing" secondItem="ahc-J2-qzB" secondAttribute="trailing" constant="15" id="NZ7-UO-fCJ"/>
+                <constraint firstAttribute="bottom" secondItem="PlB-VI-I5j" secondAttribute="bottom" id="Yex-Ae-v0R"/>
+                <constraint firstAttribute="trailing" secondItem="PlB-VI-I5j" secondAttribute="trailing" id="c5Y-CS-fn4"/>
+                <constraint firstItem="eo7-39-8oE" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="oWp-Uo-aVM"/>
+                <constraint firstAttribute="trailing" secondItem="QdG-Eu-hvR" secondAttribute="trailing" constant="15" id="uc6-pc-9LM"/>
+                <constraint firstItem="ahc-J2-qzB" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="15" id="wty-1S-jQ8"/>
+                <constraint firstItem="PlB-VI-I5j" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="zGS-wf-MfI"/>
+            </constraints>
             <size key="customSize" width="236" height="246"/>
-            <point key="canvasLocation" x="3" y="74"/>
+            <connections>
+                <outlet property="CurrentPriceLabel" destination="fPj-Ta-jXk" id="BHi-i8-66w"/>
+                <outlet property="DescInfoLabel" destination="e9u-1v-ixh" id="Feg-I6-Lck"/>
+                <outlet property="LastPriceLabel" destination="h4j-Es-In7" id="HXt-qp-04Z"/>
+                <outlet property="NewShopImage" destination="eo7-39-8oE" id="UUW-CZ-x6b"/>
+                <outlet property="PurchaseCountLabel" destination="IsI-uL-i13" id="RBy-OI-QLF"/>
+                <outlet property="infoImage" destination="PlB-VI-I5j" id="6xB-T1-4Pb"/>
+                <outlet property="titleLabel" destination="LAl-XO-8uM" id="tSZ-NI-EI4"/>
+            </connections>
+            <point key="canvasLocation" x="-18" y="21"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="bg_dealcell" width="10" height="10"/>
+        <image name="ic_deal_new" width="38" height="24"/>
+        <image name="placeholder_deal" width="273" height="172"/>
+    </resources>
 </document>

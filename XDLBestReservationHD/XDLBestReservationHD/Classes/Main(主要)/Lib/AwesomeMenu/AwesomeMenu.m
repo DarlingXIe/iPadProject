@@ -102,10 +102,12 @@ static CGPoint RotateCGPointAroundCenter(CGPoint point, CGPoint center, float an
 
 - (void)setHighlightedImage:(UIImage *)highlightedImage {
 	self.startButton.highlightedImage = highlightedImage;
+    
 }
 
 - (UIImage*)highlightedImage {
 	return self.startButton.highlightedImage;
+    
 }
 
 
@@ -123,10 +125,9 @@ static CGPoint RotateCGPointAroundCenter(CGPoint point, CGPoint center, float an
 
 - (UIImage*)highlightedContentImage {
 	return self.startButton.contentImageView.highlightedImage;
+    
 }
 
-
-                               
 #pragma mark - UIView's methods
 
 - (BOOL)pointInside:(CGPoint)point withEvent:(UIEvent *)event
@@ -209,8 +210,6 @@ static CGPoint RotateCGPointAroundCenter(CGPoint point, CGPoint center, float an
         return;
     }
     _menuItems = [menuItems copy];
-    
-    
     // clean subviews
     for (UIView *v in self.subviews) 
     {

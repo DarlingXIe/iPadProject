@@ -18,13 +18,16 @@
 #import "HMCategoryModel.h"
 #import "XDLHomeCollectionViewCell.h"
 #import "AwesomeMenu.h"
+#import "Masonry.h"
+#import "DPAPI.h"
 
 static NSString * const cellId = @"cellId";
 
-@interface HMHomeViewController ()<AwesomeMenuDelegate>
+@interface HMHomeViewController ()<AwesomeMenuDelegate,DPRequestDelegate>
 
 @property(nonatomic,strong) NSString * selectCategoryName;
 @property(nonatomic,strong) NSString * selectDistrictName;
+@property(nonatomic, strong) NSNumber * saveSortNumber;
 
 @property (nonatomic, strong) NSArray * citiesArray;
 @property (nonatomic, copy) NSString *selectCityName;
@@ -37,6 +40,12 @@ static NSString * const cellId = @"cellId";
 @property (nonatomic, strong) HMCategoryViewController *CategoryViewController;
 @property (nonatomic, strong) XDLDistrictViewController * districtViewController;
 @property (nonatomic, strong) XDLSortViewController * sortViewController;
+
+//Awesome Button X
+
+@property (nonatomic, assign) CGFloat inset;
+@property (nonatomic) NSInteger currentPage;
+
 @end
 
 @implementation HMHomeViewController
@@ -66,8 +75,8 @@ static NSString * const reuseIdentifier = @"Cell";
     layout.sectionInset = UIEdgeInsetsMake(inset, inset, inset, inset);
     layout.minimumLineSpacing = inset;
     
+    self.inset = inset;
 }
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     //保证第一次运行view能够适配屏幕的尺寸
@@ -84,6 +93,7 @@ static NSString * const reuseIdentifier = @"Cell";
     [XDLNotificationCenter addObserver:self selector:@selector(categoryDidChangeNotificaiton:) name:XDLCategoryDidChangeNotifacation object:nil];
     //
     [XDLNotificationCenter addObserver:self selector:@selector(cityVCDidChangeNotificaiton:) name:XDLCityDidChangeNotifacation object:nil];
+    
     //排序的通知
     [XDLNotificationCenter addObserver:self selector:@selector(sortDidChangeNotification:) name:XDLSortDidChangeNotifacation object:nil];
     //排序通知
@@ -114,6 +124,7 @@ static NSString * const reuseIdentifier = @"Cell";
         self.selectCategoryName = subtitle;
     }
     //loadData;
+    [self loadData];
     [self dismissViewControllerAnimated:true completion:nil];
     
 }
@@ -125,7 +136,7 @@ static NSString * const reuseIdentifier = @"Cell";
     [self.districtNavView setTitle:[NSString stringWithFormat:@"%@-全部",self.selectCityName]];
     [self.districtNavView setSubtitle:@""];
     //加载数据。
-    
+    [self loadData];
 }
 #pragma mark - 区域的选择
 -(void)districtDisChangeNotifaction:(NSNotification *)noti{
@@ -146,7 +157,8 @@ static NSString * const reuseIdentifier = @"Cell";
         self.selectDistrictName = subDis;
     }
     //loadData
-     [self dismissViewControllerAnimated:YES completion:nil];
+    [self loadData];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark - 排序选择通知
@@ -156,11 +168,11 @@ static NSString * const reuseIdentifier = @"Cell";
     
     [self.sortNavView setSubtitle:sortModel.label];
     
+    self.saveSortNumber = sortModel.value;
     //load data
-    
+    [self loadData];
     [self dismissViewControllerAnimated:true completion:nil];
 }
-
 #pragma mark -  移除通知
 - (void)dealloc
 {
@@ -320,14 +332,12 @@ static NSString * const reuseIdentifier = @"Cell";
                                   highlightedImage:[UIImage imageNamed:@"icon_pathMenu_background_highlighted"]
                                   ContentImage:[UIImage imageNamed:@"icon_pathMenu_mainMine_normal"]
                                   highlightedContentImage:nil];
-    
     //2. 添加其他几个按钮
     AwesomeMenuItem *item0 = [[AwesomeMenuItem alloc]
                               initWithImage:[UIImage imageNamed:@"bg_pathMenu_black_normal"]
                               highlightedImage:nil
                               ContentImage:[UIImage imageNamed:@"icon_pathMenu_mainMine_normal"]
                               highlightedContentImage:[UIImage imageNamed:@"icon_pathMenu_mainMine_highlighted"]];
-    
     AwesomeMenuItem *item1 = [[AwesomeMenuItem alloc]
                               initWithImage:[UIImage imageNamed:@"bg_pathMenu_black_normal"]
                               highlightedImage:nil
@@ -339,7 +349,6 @@ static NSString * const reuseIdentifier = @"Cell";
                               highlightedImage:nil
                               ContentImage:[UIImage imageNamed:@"icon_pathMenu_scan_normal"]
                               highlightedContentImage:[UIImage imageNamed:@"icon_pathMenu_scan_highlighted"]];
-    
     AwesomeMenuItem *item3 = [[AwesomeMenuItem alloc]
                               initWithImage:[UIImage imageNamed:@"bg_pathMenu_black_normal"]
                               highlightedImage:nil
@@ -347,18 +356,23 @@ static NSString * const reuseIdentifier = @"Cell";
                               highlightedContentImage:[UIImage imageNamed:@"icon_pathMenu_more_highlighted"]];
     
     NSArray *items = @[item0, item1, item2, item3];
-    
     AwesomeMenu *menu = [[AwesomeMenu alloc] initWithFrame:CGRectZero startItem:startItem menuItems:items];
     [self.view addSubview:menu];
     
     menu.rotateAddButton = true;
-    
+    //调整角度可以把rototeAngle和wholeAngle一起调整
+//    menu.menuWholeAngle = -M_PI;
+//    menu.rotateAngle = M_PI_2;
     menu.menuWholeAngle = M_PI_2;
-
-    menu.startPoint = CGPointMake(0, 0);
-    
+    menu.startPoint = CGPointMake(20, 0);
+    //menu.nearRadius = 5;
+    menu.endRadius = 100;
+    menu.farRadius = 50;
     menu.delegate = self;
-    
+    [menu mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.offset(self.inset);
+        make.bottom.offset(-self.inset);
+    }];
     menu.alpha = 0.5;
 }
 #pragma mark 必须实现的方法
@@ -381,7 +395,58 @@ static NSString * const reuseIdentifier = @"Cell";
             break;
     }
 }
-#pragma mark loadData
+
+#pragma mark- AwesomeMenu 代理方法
+-(void)awesomeMenuWillAnimateOpen:(AwesomeMenu *)menu{
+    
+    menu.contentImage = [UIImage imageNamed:@"icon_pathMenu_cross_normal"];
+    
+    [UIView animateWithDuration:0.25 animations:^{
+        menu.alpha = 1;
+    }];
+
+}
+-(void)awesomeMenuWillAnimateClose:(AwesomeMenu *)menu{
+    
+    menu.contentImage = [UIImage imageNamed:@"icon_pathMenu_mainMine_normal"];
+    
+    [UIView animateWithDuration:0.25 animations:^{
+        menu.alpha = 0.5;
+    }];
+}
+
+#pragma mark loadData 分类请求数据
+-(void)loadData{
+    
+    DPAPI * apI = [DPAPI new];
+    
+    NSMutableDictionary * params = [NSMutableDictionary dictionary];
+    //请求参数
+    params[@"city"] = @"北京";
+    params[@"category"] = self.selectCategoryName;
+    params[@"region"] = self.selectDistrictName;
+    params[@"sort"] = self.selectSortValue;
+    
+    self.currentPage = 1;
+    params[@"page"] = @(self.currentPage);
+
+    params[@"limit"] = @2;
+    
+    [apI requestWithURL:@"v1/deal/find_deals" params:params delegate:self];
+}
+#pragma mark requestDataDelegate
+#pragma mark 请求成功
+- (void)request:(DPRequest *)request didFinishLoadingWithResult:(id)result
+{
+    NSLog(@"result : %@", result);
+    [result writeToFile:@"/Users/DalinXie/Desktop/iPadProject/DarlinR.plist"
+             atomically:true];
+}
+#pragma mark 请求失败
+- (void)request:(DPRequest *)request didFailWithError:(NSError *)error
+{
+    NSLog(@"error: %@",error);
+}
 
 #pragma mark <UICollectionViewDelegate>
 /*
