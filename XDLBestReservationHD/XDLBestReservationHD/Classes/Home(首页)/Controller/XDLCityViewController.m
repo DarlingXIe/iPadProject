@@ -19,6 +19,7 @@ static NSString * const cityGroupId = @"cityGroupId";
 @property (weak, nonatomic) IBOutlet UITableView *cityGroupTable;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (weak, nonatomic) IBOutlet UIButton *coverButton;
+
 @property (weak, nonatomic) XDLSearchTableViewController * citySearchVc;
 
 @end
@@ -28,15 +29,15 @@ static NSString * const cityGroupId = @"cityGroupId";
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    [self setupUI];
+    
     self.cityGroupArray = [self loadData];
+    [self setupUI];
 }
 #pragma mark - setupUI
 -(void)setupUI{
     
     self.title = @"选择城市";
     self.navigationItem.leftBarButtonItem = [UIBarButtonItem barBuutonItemWithTarget:self action:@selector(cancelIitemClick) icon:@"btn_navigation_close" highlighticon:@"btn_navigation_close_hl"];
-    
     self.cityGroupTable.sectionIndexColor = XDLTintColor;
     
     self.searchBar.tintColor = XDLTintColor;
@@ -51,7 +52,7 @@ static NSString * const cityGroupId = @"cityGroupId";
 }
 #pragma mark - loadData
 -(NSArray *) loadData{
-    
+
     NSArray *cityGroupPlist = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle]  pathForResource:@"cityGroups.plist" ofType:nil]];
     
     NSArray * cityGroupModel = [NSArray yy_modelArrayWithClass:NSClassFromString(@"XDLCityGroupModel") json:cityGroupPlist];
@@ -66,7 +67,7 @@ static NSString * const cityGroupId = @"cityGroupId";
 #pragma mark - UISearchBar 
 -(void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar{
     
-    self.navigationController.navigationBar.hidden = true;
+    self.navigationController.navigationBarHidden = true;
     
     searchBar.backgroundImage = [UIImage imageNamed:@"bg_login_textfield_hl"];
     
@@ -76,10 +77,9 @@ static NSString * const cityGroupId = @"cityGroupId";
 }
 -(void)searchBarTextDidEndEditing:(UISearchBar *)searchBar{
     
-    self.navigationController.navigationBar.hidden = false;
+    self.navigationController.navigationBarHidden = false;
     
     searchBar.backgroundImage = [UIImage imageNamed:@"bg_login_textfield"];
-    
     [searchBar setShowsCancelButton:false animated:true];
     
     self.coverButton.alpha = 0;
@@ -87,10 +87,10 @@ static NSString * const cityGroupId = @"cityGroupId";
     self.searchBar.text = @"";
     
     self.citySearchVc.view.hidden = true;
+
 }
 #pragma mark textChange
 -(void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText{
-    
     if(searchText.length > 0){
         self.citySearchVc.view.hidden = false;
         self.citySearchVc.searchText = searchText;
@@ -111,7 +111,6 @@ static NSString * const cityGroupId = @"cityGroupId";
 
 #pragma  mark - tableViewDataSource
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    
     return self.cityGroupArray.count;
 }
 
@@ -151,7 +150,6 @@ static NSString * const cityGroupId = @"cityGroupId";
 - (NSArray<NSString *> *)sectionIndexTitlesForTableView:(UITableView *)tableView
 {
     //使用For循环, 获取每个分组的标题, 最后返回Array
-    
     //这句话相当于去查询数据, 返回就是Array
     return [self.cityGroupArray valueForKey:@"title"];
 }
@@ -171,8 +169,6 @@ static NSString * const cityGroupId = @"cityGroupId";
     return _citySearchVc;
 
 }
-
-
 -(NSArray *)cityGroupArray{
     if(!_cityGroupArray){
         _cityGroupArray = [NSArray array];

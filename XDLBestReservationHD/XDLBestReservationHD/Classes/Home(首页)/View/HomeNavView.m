@@ -7,6 +7,12 @@
 //
 #import "HomeNavView.h"
 
+@interface HomeNavView()
+@property (weak, nonatomic) IBOutlet UIButton *coverButton;
+@property (weak, nonatomic) IBOutlet UILabel *mainTitleLable;
+@property (weak, nonatomic) IBOutlet UILabel *subTitleLabel;
+
+@end
 @implementation HomeNavView
 
 /** 提供类方法, 快速创建View*/
@@ -20,6 +26,24 @@
     //这里相当于, 点击了按钮之后, 发出了通知
     [self sendActionsForControlEvents:UIControlEventTouchUpInside];
 }
+
+-(void)setTarget:(id)target action:(SEL)action{
+    [self.coverButton addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
+}
+
+-(void)setTitle:(NSString *)title{
+    self.mainTitleLable.text = title;
+}
+-(void)setSubtitle:(NSString *)subtitle{
+    self.subTitleLabel.text = subtitle;
+}
+-(void)setIcon:(NSString *)icon hightlightIcon:(NSString *)hightIcon{
+    
+    [self.coverButton setImage:[UIImage imageNamed:icon] forState:UIControlStateNormal];
+    
+    [self.coverButton setImage:[UIImage imageNamed:hightIcon] forState:UIControlStateHighlighted];
+}
+
 - (void)awakeFromNib
 {
     [super awakeFromNib];
@@ -27,6 +51,4 @@
     //关闭这个属性, 就可以保证不变
     self.autoresizingMask = UIViewAutoresizingNone;
 }
-
-
 @end

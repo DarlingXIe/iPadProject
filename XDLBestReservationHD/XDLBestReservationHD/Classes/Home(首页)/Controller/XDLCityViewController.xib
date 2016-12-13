@@ -12,7 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="XDLCityViewController">
             <connections>
                 <outlet property="cityGroupTable" destination="ZGZ-rw-dVx" id="hel-Km-DH8"/>
-                <outlet property="coverButton" destination="KyW-la-ixK" id="cwK-ow-3S6"/>
+                <outlet property="coverButton" destination="MIn-0e-Oef" id="VeH-vo-7Gg"/>
                 <outlet property="searchBar" destination="R9y-2W-60t" id="Mty-np-RYi"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -33,30 +33,34 @@
                 <searchBar contentMode="redraw" placeholder="请输入城市名或拼音" backgroundImage="bg_login_textfield" translatesAutoresizingMaskIntoConstraints="NO" id="R9y-2W-60t">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                     <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="h7v-EP-yox"/>
+                    </connections>
                 </searchBar>
-                <button opaque="NO" alpha="0.0" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KyW-la-ixK" userLabel="CoverButton">
+                <button opaque="NO" alpha="0.0" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MIn-0e-Oef" userLabel="CoverButton">
                     <rect key="frame" x="0.0" y="59" width="375" height="608"/>
+                    <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                     <state key="normal">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
-                        <action selector="coverButtonClick:" destination="-1" eventType="touchUpInside" id="eYj-t9-Cm8"/>
+                        <action selector="coverButtonClick:" destination="-1" eventType="touchUpInside" id="S5n-fK-r3P"/>
                     </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="R9y-2W-60t" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="1a5-tV-A0r"/>
-                <constraint firstAttribute="bottom" secondItem="KyW-la-ixK" secondAttribute="bottom" id="45n-Qg-bxr"/>
-                <constraint firstAttribute="trailing" secondItem="KyW-la-ixK" secondAttribute="trailing" id="Ivt-r9-CVn"/>
+                <constraint firstAttribute="bottom" secondItem="MIn-0e-Oef" secondAttribute="bottom" id="6zy-gw-unQ"/>
+                <constraint firstItem="MIn-0e-Oef" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="C1N-X2-DsR"/>
                 <constraint firstAttribute="bottom" secondItem="ZGZ-rw-dVx" secondAttribute="bottom" id="SA4-Yx-mEB"/>
                 <constraint firstItem="ZGZ-rw-dVx" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Vus-uK-Fy8"/>
+                <constraint firstAttribute="trailing" secondItem="MIn-0e-Oef" secondAttribute="trailing" id="XIy-9R-kLv"/>
                 <constraint firstAttribute="trailing" secondItem="ZGZ-rw-dVx" secondAttribute="trailing" id="cvd-vq-7Jj"/>
-                <constraint firstItem="KyW-la-ixK" firstAttribute="top" secondItem="R9y-2W-60t" secondAttribute="bottom" constant="15" id="dD6-JB-AZZ"/>
                 <constraint firstItem="R9y-2W-60t" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="haT-g2-vPz"/>
                 <constraint firstAttribute="trailing" secondItem="R9y-2W-60t" secondAttribute="trailing" id="nlA-kx-Gaf"/>
+                <constraint firstItem="MIn-0e-Oef" firstAttribute="top" secondItem="R9y-2W-60t" secondAttribute="bottom" constant="15" id="nw2-Xe-Y1f"/>
                 <constraint firstItem="ZGZ-rw-dVx" firstAttribute="top" secondItem="R9y-2W-60t" secondAttribute="bottom" constant="15" id="uHM-dh-Dwp"/>
-                <constraint firstItem="KyW-la-ixK" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="yLa-sS-86j"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

@@ -33,16 +33,14 @@
         }
     }
     [self.tableView reloadData];
-    
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     NSArray *cityArray = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"cities.plist" ofType:nil]];
-    
-    self.citiesArray = [NSArray yy_modelArrayWithClass:NSClassFromString(@"HMCityModel") json:cityArray];
-    
+    self.citiesArray = [NSArray yy_modelArrayWithClass:NSClassFromString(@"XDLCityModel") json:cityArray];
     self.searchResutArray = [NSMutableArray array];
+    
 }
 
 - (void)didReceiveMemoryWarning {

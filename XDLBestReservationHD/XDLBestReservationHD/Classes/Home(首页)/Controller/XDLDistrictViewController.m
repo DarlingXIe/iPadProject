@@ -10,6 +10,7 @@
 #import "HMDropdownView.h"
 #import "XDLCityViewController.h"
 #import "HMNavigateController.h"
+
 @interface XDLDistrictViewController ()
 
 @end
@@ -23,6 +24,7 @@
     
 }
 -(void)setupUI{
+    
     //1. 加载下拉菜单
     HMDropdownView *dropdownView = [HMDropdownView dropdownView];
     //2. 添加到视图上
@@ -36,6 +38,7 @@
     NSLog(@"%@", NSStringFromCGSize(dropdownView.frame.size));
     
 }
+
 - (IBAction)clickChangeCity:(id)sender {
     //dismiss before controller
     [self dismissViewControllerAnimated:true completion:nil];
@@ -47,9 +50,10 @@
     nav.modalPresentationStyle = UIModalPresentationFormSheet;
     //
     nav.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
-    
+    //need to know
     [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:nav animated:true completion:nil];
 }
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

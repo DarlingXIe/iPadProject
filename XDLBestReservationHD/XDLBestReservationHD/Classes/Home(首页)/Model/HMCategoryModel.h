@@ -9,7 +9,6 @@
 #import <Foundation/Foundation.h>
 
 @interface HMCategoryModel : NSObject
-
 /** 名称*/
 @property (nonatomic, copy) NSString *name;
 /** 图标*/

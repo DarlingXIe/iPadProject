@@ -33,14 +33,14 @@
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="标题" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eDN-6q-x3n" userLabel="标题">
-                    <rect key="frame" x="51" y="0.0" width="109" height="19"/>
+                    <rect key="frame" x="51" y="0.0" width="109" height="22"/>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="子标题" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BiH-55-gGR" userLabel="子标题">
-                    <rect key="frame" x="51" y="19" width="109" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <rect key="frame" x="51" y="22" width="109" height="18"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -64,6 +64,11 @@
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="coverButton" destination="ufb-T9-T9k" id="CLo-zy-AhZ"/>
+                <outlet property="mainTitleLable" destination="eDN-6q-x3n" id="TT5-zL-qjH"/>
+                <outlet property="subTitleLabel" destination="BiH-55-gGR" id="kTG-7v-iHO"/>
+            </connections>
             <point key="canvasLocation" x="2" y="-302"/>
         </view>
     </objects>

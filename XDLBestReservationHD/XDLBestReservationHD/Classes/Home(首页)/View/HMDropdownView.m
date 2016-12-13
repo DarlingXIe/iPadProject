@@ -11,6 +11,7 @@
 #import "XDLDistrictModel.h"
 #import "HMDropdownLeftTableViewCell.h"
 #import "HMDropdownRightTableViewCell.h"
+#import "XDLConst.h"
 
 @interface HMDropdownView ()<UITableViewDelegate, UITableViewDataSource>
 
@@ -72,10 +73,8 @@
         //1. 显示Label数据
         HMCategoryModel *categoryModel = self.categoryArray[indexPath.row];
         cell.textLabel.text = categoryModel.name;
-        
         //2. 显示Image数据
         cell.imageView.image = [UIImage imageNamed:categoryModel.icon];
-        
         //3. 设置cell的附属视图
         if (categoryModel.subcategories.count == 0) {
             cell.accessoryType = UITableViewCellAccessoryNone;
@@ -90,6 +89,7 @@
         NSArray *categoryArray = self.selectCategoryLeftModel.subcategories;
         cell.textLabel.text = categoryArray[indexPath.row];
         return cell;
+        
         }
     }else{
         if (tableView == self.leftTableView) {
@@ -115,22 +115,28 @@
         }
     }
 }
-
-
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if(self.categoryArray){
         if (tableView == self.leftTableView) {
         //1. 记录左边选中的模型
-        self.selectCategoryLeftModel = self.categoryArray[indexPath.row];
+            self.selectCategoryLeftModel = self.categoryArray[indexPath.row];
+            if(self.selectCategoryLeftModel.subcategories.count == 0){
+                [XDLNotificationCenter postNotificationName:XDLCategoryDidChangeNotifacation object:nil userInfo:@{XDLCategoryModelKey: self.selectCategoryLeftModel}];
+            }
         //2. 刷新右边数据
-        [self.rightTableView reloadData];
+            //    [self.rightTableView reloadData];
+        }else{
+                [XDLNotificationCenter postNotificationName:XDLCategoryDidChangeNotifacation object:nil userInfo:@{XDLCategoryModelKey: self.selectCategoryLeftModel, XDLCategorySubtitleKey: self.selectCategoryLeftModel.subcategories[indexPath.row]}];
         }
     }else{
         if (tableView == self.leftTableView) {
             //1. 记录左边选中的模型
           self.selectDistrictModel = self.districtArray[indexPath.row];
-            
+            if(self.selectDistrictModel.subdistricts.count == 0){
+                [XDLNotificationCenter postNotificationName:XDLDistrictDidChangeNotifacation object:nil userInfo:@{XDLDistrictModelKey: self.selectDistrictModel}];
+            }
+        }else{
+            [XDLNotificationCenter postNotificationName:XDLDistrictDidChangeNotifacation object:nil userInfo:@{XDLDistrictModelKey:self.selectDistrictModel, XDLDistrictSubtitleKey:self.selectDistrictModel.subdistricts[indexPath.row]}];
         }
     }
     //2. 刷新右边数据

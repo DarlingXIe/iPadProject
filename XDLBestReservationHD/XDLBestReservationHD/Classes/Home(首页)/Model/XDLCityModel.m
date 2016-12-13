@@ -9,7 +9,6 @@
 #import "XDLCityModel.h"
 #import "XDLDistrictModel.h"
 @implementation XDLCityModel
-
 + (NSDictionary *)modelContainerPropertyGenericClass {
     return @{@"districts" : NSClassFromString(@"XDLDistrictModel")};
 }

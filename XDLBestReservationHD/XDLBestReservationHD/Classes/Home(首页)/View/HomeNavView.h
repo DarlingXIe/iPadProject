@@ -17,5 +17,12 @@
  2. .h中提供方法, 让外界写好方法, 传到本类
  3. 自定义控件写法: 将View改成UIControl
  */
+-(void)setTarget:(id)target action:(SEL)action;
+
+-(void)setTitle:(NSString *)title;
+
+-(void)setSubtitle:(NSString *)subtitle;
+
+-(void)setIcon:(NSString *)icon hightlightIcon:(NSString *)hightIcon;
 
 @end

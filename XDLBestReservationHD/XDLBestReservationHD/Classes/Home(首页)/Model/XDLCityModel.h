@@ -9,7 +9,6 @@
 #import <Foundation/Foundation.h>
 
 @interface XDLCityModel : NSObject
-
 /** 名字*/
 @property (nonatomic, copy) NSString *name;
 /** 子区域数据*/
@@ -18,6 +17,5 @@
 @property (nonatomic, strong) NSString *pinYinHead;
 
 @property (nonatomic, strong) NSArray * districts;
-
 
 @end
