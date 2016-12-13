@@ -29,3 +29,6 @@ UIKIT_EXTERN NSString *const XDLDistrictSubtitleKey;
 UIKIT_EXTERN NSString *const XDLSortDidChangeNotifacation;
 UIKIT_EXTERN NSString *const XDLSortModelKey;
 
+// Size的宽度
+UIKIT_EXTERN const CGFloat XDLCellWidth;
+

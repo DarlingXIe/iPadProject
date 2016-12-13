@@ -5,7 +5,6 @@
 //  Created by heima on 16/9/14.
 //  Copyright © 2016年 heima. All rights reserved.
 //
-
 #import "HMHomeViewController.h"
 #import "HomeNavView.h"
 #import "HMCategoryViewController.h"
@@ -17,11 +16,14 @@
 #import "XDLCityModel.h"
 #import "XDLConst.h"
 #import "HMCategoryModel.h"
+#import "XDLHomeCollectionViewCell.h"
+#import "AwesomeMenu.h"
 
-@interface HMHomeViewController ()
+static NSString * const cellId = @"cellId";
+
+@interface HMHomeViewController ()<AwesomeMenuDelegate>
 
 @property(nonatomic,strong) NSString * selectCategoryName;
-
 @property(nonatomic,strong) NSString * selectDistrictName;
 
 @property (nonatomic, strong) NSArray * citiesArray;
@@ -35,9 +37,6 @@
 @property (nonatomic, strong) HMCategoryViewController *CategoryViewController;
 @property (nonatomic, strong) XDLDistrictViewController * districtViewController;
 @property (nonatomic, strong) XDLSortViewController * sortViewController;
-
-
-
 @end
 
 @implementation HMHomeViewController
@@ -46,19 +45,37 @@ static NSString * const reuseIdentifier = @"Cell";
 
 - (instancetype)init
 {
-    self = [super initWithCollectionViewLayout:[UICollectionViewFlowLayout new]];
+    self = [super init];
     if (self) {
-        
+        UICollectionViewFlowLayout * layout = [UICollectionViewFlowLayout new];
+        layout.itemSize = CGSizeMake(XDLCellWidth, XDLCellWidth);
+        self = [self initWithCollectionViewLayout:layout];
     }
     return self;
+}
+#pragma mark : iOS8出现的屏幕旋转方法
+//屏幕适配列数:
+-(void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator{
+    
+    NSInteger col = size.width > size.height ? 3 : 2;
+    
+    CGFloat inset = (size.width - col*XDLCellWidth) / (col + 1);
+    
+    UICollectionViewFlowLayout * layout = (UICollectionViewFlowLayout *)self.collectionViewLayout;
+    
+    layout.sectionInset = UIEdgeInsetsMake(inset, inset, inset, inset);
+    layout.minimumLineSpacing = inset;
+    
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    //保证第一次运行view能够适配屏幕的尺寸
+    [self viewWillTransitionToSize:[UIScreen mainScreen].bounds.size withTransitionCoordinator:self.transitionCoordinator];
     
     self.collectionView.backgroundColor = XDLColor(230, 230, 230);
     
-    [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
+    [self.collectionView registerNib:[UINib nibWithNibName:@"XDLHomeCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:cellId];
     // 设置左边导航栏按钮
     [self setupLeftNav];
     // 设置右边导航栏按钮
@@ -69,7 +86,11 @@ static NSString * const reuseIdentifier = @"Cell";
     [XDLNotificationCenter addObserver:self selector:@selector(cityVCDidChangeNotificaiton:) name:XDLCityDidChangeNotifacation object:nil];
     //排序的通知
     [XDLNotificationCenter addObserver:self selector:@selector(sortDidChangeNotification:) name:XDLSortDidChangeNotifacation object:nil];
+    //排序通知
     [XDLNotificationCenter addObserver:self selector:@selector(districtDisChangeNotifaction:) name:XDLDistrictDidChangeNotifacation object:nil];
+    
+    [self setupAwesomeMenu];
+    
 }
 #pragma mark - 通知
 #pragma mark - 分类选择通知
@@ -84,7 +105,6 @@ static NSString * const reuseIdentifier = @"Cell";
     [self.categoryNavView setSubtitle:subtitle];
     
     [self.categoryNavView setIcon:model.icon hightlightIcon:model.highlighted_icon];
-    
     //分情况记录请求的参数
     if([model.name isEqualToString:@"全部分类"]){
         self.selectCategoryName = nil;
@@ -93,9 +113,7 @@ static NSString * const reuseIdentifier = @"Cell";
     }else{
         self.selectCategoryName = subtitle;
     }
-    
     //loadData;
-    
     [self dismissViewControllerAnimated:true completion:nil];
     
 }
@@ -107,7 +125,6 @@ static NSString * const reuseIdentifier = @"Cell";
     [self.districtNavView setTitle:[NSString stringWithFormat:@"%@-全部",self.selectCityName]];
     [self.districtNavView setSubtitle:@""];
     //加载数据。
-    
     
 }
 #pragma mark - 区域的选择
@@ -129,7 +146,6 @@ static NSString * const reuseIdentifier = @"Cell";
         self.selectDistrictName = subDis;
     }
     //loadData
-    
      [self dismissViewControllerAnimated:YES completion:nil];
 }
 
@@ -268,23 +284,15 @@ static NSString * const reuseIdentifier = @"Cell";
 {
     NSLog(@"地图");
 }
-#pragma mark <UICollectionViewDataSource>
-//- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-//#warning Incomplete implementation, return the number of sections
-//    return 0;
-//}
-//
-//
-//- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-//#warning Incomplete implementation, return the number of items
-//    return 0;
-//}
-//
+#pragma mark UICollectionView代理
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return 10;
+}
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
-    // Configure the cell
+    XDLHomeCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellId forIndexPath:indexPath];
     return cell;
 }
+
 #pragma mark 城市数据懒加载
 - (NSArray *)citiesArray
 {
@@ -296,7 +304,7 @@ static NSString * const reuseIdentifier = @"Cell";
     return _citiesArray;
 }
 
-#pragma mark lazy
+#pragma mark lazy setupUI
 -(XDLDistrictViewController *)districtViewController{
     if(_districtViewController == nil){
         XDLDistrictViewController * DisVc = [XDLDistrictViewController new];
@@ -304,16 +312,84 @@ static NSString * const reuseIdentifier = @"Cell";
     }
     return _districtViewController;
 }
+#pragma mark-setupAwesomeMenu
+-(void)setupAwesomeMenu{
+    //1. 中间的startItem
+    AwesomeMenuItem *startItem = [[AwesomeMenuItem alloc]
+                                  initWithImage:[UIImage imageNamed:@"icon_pathMenu_background_normal"]
+                                  highlightedImage:[UIImage imageNamed:@"icon_pathMenu_background_highlighted"]
+                                  ContentImage:[UIImage imageNamed:@"icon_pathMenu_mainMine_normal"]
+                                  highlightedContentImage:nil];
+    
+    //2. 添加其他几个按钮
+    AwesomeMenuItem *item0 = [[AwesomeMenuItem alloc]
+                              initWithImage:[UIImage imageNamed:@"bg_pathMenu_black_normal"]
+                              highlightedImage:nil
+                              ContentImage:[UIImage imageNamed:@"icon_pathMenu_mainMine_normal"]
+                              highlightedContentImage:[UIImage imageNamed:@"icon_pathMenu_mainMine_highlighted"]];
+    
+    AwesomeMenuItem *item1 = [[AwesomeMenuItem alloc]
+                              initWithImage:[UIImage imageNamed:@"bg_pathMenu_black_normal"]
+                              highlightedImage:nil
+                              ContentImage:[UIImage imageNamed:@"icon_pathMenu_collect_normal"]
+                              highlightedContentImage:[UIImage imageNamed:@"icon_pathMenu_collect_highlighted"]];
+    
+    AwesomeMenuItem *item2 = [[AwesomeMenuItem alloc]
+                              initWithImage:[UIImage imageNamed:@"bg_pathMenu_black_normal"]
+                              highlightedImage:nil
+                              ContentImage:[UIImage imageNamed:@"icon_pathMenu_scan_normal"]
+                              highlightedContentImage:[UIImage imageNamed:@"icon_pathMenu_scan_highlighted"]];
+    
+    AwesomeMenuItem *item3 = [[AwesomeMenuItem alloc]
+                              initWithImage:[UIImage imageNamed:@"bg_pathMenu_black_normal"]
+                              highlightedImage:nil
+                              ContentImage:[UIImage imageNamed:@"icon_pathMenu_more_normal"]
+                              highlightedContentImage:[UIImage imageNamed:@"icon_pathMenu_more_highlighted"]];
+    
+    NSArray *items = @[item0, item1, item2, item3];
+    
+    AwesomeMenu *menu = [[AwesomeMenu alloc] initWithFrame:CGRectZero startItem:startItem menuItems:items];
+    [self.view addSubview:menu];
+    
+    menu.rotateAddButton = true;
+    
+    menu.menuWholeAngle = M_PI_2;
+
+    menu.startPoint = CGPointMake(0, 0);
+    
+    menu.delegate = self;
+    
+    menu.alpha = 0.5;
+}
+#pragma mark 必须实现的方法
+- (void)awesomeMenu:(AwesomeMenu *)menu didSelectIndex:(NSInteger)idx
+{
+    switch (idx) {
+        case 0:
+            NSLog(@"1");
+            break;
+        case 1:
+            NSLog(@"2");
+            break;
+        case 2:
+            NSLog(@"3");
+            break;
+        case 3:
+            NSLog(@"4");
+            break;
+        default:
+            break;
+    }
+}
+#pragma mark loadData
 
 #pragma mark <UICollectionViewDelegate>
-
 /*
 // Uncomment this method to specify if the specified item should be highlighted during tracking
 - (BOOL)collectionView:(UICollectionView *)collectionView shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
 	return YES;
 }
 */
-
 /*
 // Uncomment this method to specify if the specified item should be selected
 - (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -328,7 +404,6 @@ static NSString * const reuseIdentifier = @"Cell";
 	return NO;
 }
 - (void)collectionView:(UICollectionView *)collectionView performAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
-	
 }
 */
 @end

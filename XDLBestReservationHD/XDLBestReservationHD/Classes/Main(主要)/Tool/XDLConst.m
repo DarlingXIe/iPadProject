@@ -23,3 +23,5 @@ NSString *const XDLDistrictSubtitleKey = @"HMDistrictSubtitleKey";
 NSString *const XDLSortDidChangeNotifacation = @"HMSortDidChangeNotifacation";
 NSString *const XDLSortModelKey = @"HMSortModelKey";
 
+// Size的宽度
+CGFloat XDLCellWidth = 300;

@@ -29,6 +29,8 @@
 		F776D58C1DFD8572003067B9 /* XDLCityGroupModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F776D58B1DFD8572003067B9 /* XDLCityGroupModel.m */; };
 		F776D58F1DFDE69F003067B9 /* XDLConst.m in Sources */ = {isa = PBXBuildFile; fileRef = F776D58E1DFDE69F003067B9 /* XDLConst.m */; };
 		F776D5921DFDF4B2003067B9 /* XDLSearchTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F776D5911DFDF4B2003067B9 /* XDLSearchTableViewController.m */; };
+		F78B568C1E003E39003BBDD4 /* XDLHomeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F78B568A1E003E39003BBDD4 /* XDLHomeCollectionViewCell.m */; };
+		F78B568D1E003E39003BBDD4 /* XDLHomeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F78B568B1E003E39003BBDD4 /* XDLHomeCollectionViewCell.xib */; };
 		F794604A1DBA977D007B8DF2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F79460491DBA977D007B8DF2 /* main.m */; };
 		F794604D1DBA977D007B8DF2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F794604C1DBA977D007B8DF2 /* AppDelegate.m */; };
 		F79460551DBA977D007B8DF2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F79460541DBA977D007B8DF2 /* Assets.xcassets */; };
@@ -86,6 +88,9 @@
 		F776D58E1DFDE69F003067B9 /* XDLConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XDLConst.m; sourceTree = "<group>"; };
 		F776D5901DFDF4B2003067B9 /* XDLSearchTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDLSearchTableViewController.h; sourceTree = "<group>"; };
 		F776D5911DFDF4B2003067B9 /* XDLSearchTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XDLSearchTableViewController.m; sourceTree = "<group>"; };
+		F78B56891E003E39003BBDD4 /* XDLHomeCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDLHomeCollectionViewCell.h; sourceTree = "<group>"; };
+		F78B568A1E003E39003BBDD4 /* XDLHomeCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XDLHomeCollectionViewCell.m; sourceTree = "<group>"; };
+		F78B568B1E003E39003BBDD4 /* XDLHomeCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XDLHomeCollectionViewCell.xib; sourceTree = "<group>"; };
 		F79460451DBA977D007B8DF2 /* XDLBestReservationHD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XDLBestReservationHD.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F79460491DBA977D007B8DF2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F794604B1DBA977D007B8DF2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -211,6 +216,9 @@
 				F776D5601DFCA995003067B9 /* HomeNavView.h */,
 				F776D5611DFCA995003067B9 /* HomeNavView.m */,
 				F776D5621DFCA995003067B9 /* HomeNavView.xib */,
+				F78B56891E003E39003BBDD4 /* XDLHomeCollectionViewCell.h */,
+				F78B568A1E003E39003BBDD4 /* XDLHomeCollectionViewCell.m */,
+				F78B568B1E003E39003BBDD4 /* XDLHomeCollectionViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -401,6 +409,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F78B568D1E003E39003BBDD4 /* XDLHomeCollectionViewCell.xib in Resources */,
 				F794606F1DBAA520007B8DF2 /* cities.plist in Resources */,
 				F794606E1DBAA520007B8DF2 /* categories.plist in Resources */,
 				F776D5761DFCA995003067B9 /* HomeNavView.xib in Resources */,
@@ -488,6 +497,7 @@
 				F7EC39DE1DFE642C001FEB33 /* XDLSortModel.m in Sources */,
 				F776D56F1DFCA995003067B9 /* HMHomeViewController.m in Sources */,
 				F776D57D1DFCD2BE003067B9 /* XDLDistrictViewController.m in Sources */,
+				F78B568C1E003E39003BBDD4 /* XDLHomeCollectionViewCell.m in Sources */,
 				F7EC39ED1DFFA8FC001FEB33 /* DPRequest.m in Sources */,
 				F776D5711DFCA995003067B9 /* HMDropdownLeftTableViewCell.m in Sources */,
 				F776D56E1DFCA995003067B9 /* HMCategoryViewController.m in Sources */,
