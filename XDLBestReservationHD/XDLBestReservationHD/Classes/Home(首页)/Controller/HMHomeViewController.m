@@ -17,9 +17,12 @@
 #import "XDLConst.h"
 #import "HMCategoryModel.h"
 #import "XDLHomeCollectionViewCell.h"
+//#import "HMDealCell.h"
 #import "AwesomeMenu.h"
 #import "Masonry.h"
 #import "DPAPI.h"
+#import "XDLDealModel.h"
+#import "MJExtension.h"
 
 static NSString * const cellId = @"cellId";
 
@@ -42,15 +45,22 @@ static NSString * const cellId = @"cellId";
 @property (nonatomic, strong) XDLSortViewController * sortViewController;
 
 //Awesome Button X
-
 @property (nonatomic, assign) CGFloat inset;
 @property (nonatomic) NSInteger currentPage;
+//loadDataArray.
+@property (nonatomic, strong) NSMutableArray * dealArray;
+
+@property (nonatomic, strong) UIImageView * noDataImageView;
+
+@property (nonatomic, strong) DPRequest * lastRequest;
+
+@property (nonatomic, assign) NSInteger totalCount;
 
 @end
 
 @implementation HMHomeViewController
 
-static NSString * const reuseIdentifier = @"Cell";
+static NSString * const dealCellID = @"dealCellID";
 
 - (instancetype)init
 {
@@ -84,7 +94,7 @@ static NSString * const reuseIdentifier = @"Cell";
     
     self.collectionView.backgroundColor = XDLColor(230, 230, 230);
     
-    [self.collectionView registerNib:[UINib nibWithNibName:@"XDLHomeCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:cellId];
+    [self.collectionView registerNib:[UINib nibWithNibName:@"XDLHomeCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:dealCellID];
     // 设置左边导航栏按钮
     [self setupLeftNav];
     // 设置右边导航栏按钮
@@ -100,6 +110,9 @@ static NSString * const reuseIdentifier = @"Cell";
     [XDLNotificationCenter addObserver:self selector:@selector(districtDisChangeNotifaction:) name:XDLDistrictDidChangeNotifacation object:nil];
     
     [self setupAwesomeMenu];
+    
+    [self setupRefresh];
+    //[self loadNewData];
     
 }
 #pragma mark - 通知
@@ -137,6 +150,7 @@ static NSString * const reuseIdentifier = @"Cell";
     [self.districtNavView setSubtitle:@""];
     //加载数据。
     [self loadData];
+    
 }
 #pragma mark - 区域的选择
 -(void)districtDisChangeNotifaction:(NSNotification *)noti{
@@ -173,6 +187,7 @@ static NSString * const reuseIdentifier = @"Cell";
     [self loadData];
     [self dismissViewControllerAnimated:true completion:nil];
 }
+
 #pragma mark -  移除通知
 - (void)dealloc
 {
@@ -267,6 +282,7 @@ static NSString * const reuseIdentifier = @"Cell";
     [self presentViewController:districtVC animated:YES completion:nil];
     
      self.selectCityName = self.selectCityName == nil? @"北京" : self.selectCityName;
+    
 }
 #pragma mark - 排序按钮点击方法
 -(void)sortClick{
@@ -298,13 +314,20 @@ static NSString * const reuseIdentifier = @"Cell";
 }
 #pragma mark UICollectionView代理
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 10;
-}
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    XDLHomeCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellId forIndexPath:indexPath];
-    return cell;
+    
+     self.collectionView.mj_footer.hidden = self.totalCount == self.dealArray.count ;
+     self.noDataImageView.hidden = self.dealArray.count != 0;
+     return self.dealArray.count;
+//      return 10;
 }
 
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    XDLHomeCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:dealCellID forIndexPath:indexPath];
+    cell.dealModel = self.dealArray[indexPath.row];
+    //cell.dealModel.title = @"hahahah";
+    return cell;
+}
 #pragma mark 城市数据懒加载
 - (NSArray *)citiesArray
 {
@@ -338,6 +361,7 @@ static NSString * const reuseIdentifier = @"Cell";
                               highlightedImage:nil
                               ContentImage:[UIImage imageNamed:@"icon_pathMenu_mainMine_normal"]
                               highlightedContentImage:[UIImage imageNamed:@"icon_pathMenu_mainMine_highlighted"]];
+    
     AwesomeMenuItem *item1 = [[AwesomeMenuItem alloc]
                               initWithImage:[UIImage imageNamed:@"bg_pathMenu_black_normal"]
                               highlightedImage:nil
@@ -400,7 +424,6 @@ static NSString * const reuseIdentifier = @"Cell";
 -(void)awesomeMenuWillAnimateOpen:(AwesomeMenu *)menu{
     
     menu.contentImage = [UIImage imageNamed:@"icon_pathMenu_cross_normal"];
-    
     [UIView animateWithDuration:0.25 animations:^{
         menu.alpha = 1;
     }];
@@ -409,45 +432,98 @@ static NSString * const reuseIdentifier = @"Cell";
 -(void)awesomeMenuWillAnimateClose:(AwesomeMenu *)menu{
     
     menu.contentImage = [UIImage imageNamed:@"icon_pathMenu_mainMine_normal"];
-    
     [UIView animateWithDuration:0.25 animations:^{
         menu.alpha = 0.5;
     }];
 }
 
-#pragma mark loadData 分类请求数据
+#pragma mark-loadData 分类请求数据
 -(void)loadData{
     
     DPAPI * apI = [DPAPI new];
-    
     NSMutableDictionary * params = [NSMutableDictionary dictionary];
+    
     //请求参数
-    params[@"city"] = @"北京";
+    params[@"city"] = self.selectCityName == nil? @"北京" : self.selectCityName;
     params[@"category"] = self.selectCategoryName;
     params[@"region"] = self.selectDistrictName;
     params[@"sort"] = self.selectSortValue;
-    
-    self.currentPage = 1;
     params[@"page"] = @(self.currentPage);
-
-    params[@"limit"] = @2;
-    
-    [apI requestWithURL:@"v1/deal/find_deals" params:params delegate:self];
+    params[@"limit"] = @(20);
+    self.lastRequest = [apI requestWithURL:@"v1/deal/find_deals" params:params delegate:self];
 }
-#pragma mark requestDataDelegate
-#pragma mark 请求成功
+-(void)loadNewData{
+    self.currentPage = 1;
+    [self loadData];
+}
+-(void)loadMoreData{
+    self.currentPage++;
+    [self loadData];
+}
+#pragma mark-requestDataDelegate
+#pragma mark-请求成功
 - (void)request:(DPRequest *)request didFinishLoadingWithResult:(id)result
 {
-    NSLog(@"result : %@", result);
+    NSLog(@"reslut: %@", result[@"deals"]);
+    
+    if(self.lastRequest != request){
+        return;
+     }
+    
+    if(self.currentPage == 1){
+        [self.dealArray removeAllObjects];
+    }
+    
     [result writeToFile:@"/Users/DalinXie/Desktop/iPadProject/DarlinR.plist"
              atomically:true];
+    
+    self.dealArray = [XDLDealModel mj_objectArrayWithKeyValuesArray:result[@"deals"]];
+    
+    [self.collectionView.mj_header endRefreshing];
+    [self.collectionView.mj_footer endRefreshing];
+    //判断是否加载完整的首页的数据,隐藏,mj_footer
+    self.totalCount = [result[@"total_count"] integerValue];
+    
+    [self.collectionView reloadData];
 }
-#pragma mark 请求失败
+#pragma mark-请求失败
 - (void)request:(DPRequest *)request didFailWithError:(NSError *)error
 {
     NSLog(@"error: %@",error);
+    //?????????
+    if(self.lastRequest != request){
+        return;
+    }
+    [self.collectionView.mj_header endRefreshing];
+    [self.collectionView.mj_footer endRefreshing];
+    [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"connect error"]];
+    if(self.currentPage != 1){
+        self.currentPage--;
+    }
 }
-
+#pragma mark- setupRefresh
+-(void)setupRefresh{
+    
+    self.collectionView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
+    [self.collectionView.mj_header beginRefreshing];
+    
+    self.collectionView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreData)];
+    //[self.collectionView.mj_footer beginRefreshing];
+    self.collectionView.mj_footer.hidden = true;
+}
+#pragma mark- dealWithNoImage
+-(UIImageView *)noDataImageView{
+    
+    if(!_noDataImageView){
+        _noDataImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon_deals_empty"]];
+        [self.collectionView addSubview:_noDataImageView];
+        [_noDataImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.center.equalTo(self.collectionView);
+        }];
+    }
+    return _noDataImageView;
+    
+}
 #pragma mark <UICollectionViewDelegate>
 /*
 // Uncomment this method to specify if the specified item should be highlighted during tracking

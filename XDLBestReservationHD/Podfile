@@ -9,4 +9,8 @@ target 'XDLBestReservationHD' do
 
 pod 'YYModel'
 pod 'Masonry'
+pod 'SDWebImage'
+pod 'MJRefresh'
+pod 'SVProgressHUD'
+pod 'MJExtension'
 end

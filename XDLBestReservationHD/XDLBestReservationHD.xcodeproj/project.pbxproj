@@ -29,6 +29,8 @@
 		F776D58C1DFD8572003067B9 /* XDLCityGroupModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F776D58B1DFD8572003067B9 /* XDLCityGroupModel.m */; };
 		F776D58F1DFDE69F003067B9 /* XDLConst.m in Sources */ = {isa = PBXBuildFile; fileRef = F776D58E1DFDE69F003067B9 /* XDLConst.m */; };
 		F776D5921DFDF4B2003067B9 /* XDLSearchTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F776D5911DFDF4B2003067B9 /* XDLSearchTableViewController.m */; };
+		F78278F21E03914200A9CFBD /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = F78278F11E03914200A9CFBD /* Foundation+Log.m */; };
+		F78278F51E03936700A9CFBD /* DMExtensionConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = F78278F41E03936700A9CFBD /* DMExtensionConfig.m */; };
 		F78B568C1E003E39003BBDD4 /* XDLHomeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F78B568A1E003E39003BBDD4 /* XDLHomeCollectionViewCell.m */; };
 		F78B568D1E003E39003BBDD4 /* XDLHomeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F78B568B1E003E39003BBDD4 /* XDLHomeCollectionViewCell.xib */; };
 		F794604A1DBA977D007B8DF2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F79460491DBA977D007B8DF2 /* main.m */; };
@@ -38,6 +40,11 @@
 		F794606F1DBAA520007B8DF2 /* cities.plist in Resources */ = {isa = PBXBuildFile; fileRef = F794606B1DBAA520007B8DF2 /* cities.plist */; };
 		F79460701DBAA520007B8DF2 /* cityGroups.plist in Resources */ = {isa = PBXBuildFile; fileRef = F794606C1DBAA520007B8DF2 /* cityGroups.plist */; };
 		F79460711DBAA520007B8DF2 /* sorts.plist in Resources */ = {isa = PBXBuildFile; fileRef = F794606D1DBAA520007B8DF2 /* sorts.plist */; };
+		F7A001931E01A62A00BC341F /* XDLDealModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A001921E01A62A00BC341F /* XDLDealModel.m */; };
+		F7A001961E01A66700BC341F /* XDLReturnDealModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A001951E01A66700BC341F /* XDLReturnDealModel.m */; };
+		F7A001991E031F7000BC341F /* NSString+XDLCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A001981E031F7000BC341F /* NSString+XDLCategory.m */; };
+		F7A001A01E03330600BC341F /* XDLDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F7A0019E1E03330600BC341F /* XDLDetailViewController.m */; };
+		F7A001A11E03330600BC341F /* XDLDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7A0019F1E03330600BC341F /* XDLDetailViewController.xib */; };
 		F7EC39DB1DFE5619001FEB33 /* XDLSortViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F7EC39DA1DFE5619001FEB33 /* XDLSortViewController.m */; };
 		F7EC39DE1DFE642C001FEB33 /* XDLSortModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F7EC39DD1DFE642C001FEB33 /* XDLSortModel.m */; };
 		F7EC39EA1DFFA8FC001FEB33 /* AwesomeMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = F7EC39E11DFFA8FC001FEB33 /* AwesomeMenu.m */; };
@@ -88,6 +95,9 @@
 		F776D58E1DFDE69F003067B9 /* XDLConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XDLConst.m; sourceTree = "<group>"; };
 		F776D5901DFDF4B2003067B9 /* XDLSearchTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDLSearchTableViewController.h; sourceTree = "<group>"; };
 		F776D5911DFDF4B2003067B9 /* XDLSearchTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XDLSearchTableViewController.m; sourceTree = "<group>"; };
+		F78278F11E03914200A9CFBD /* Foundation+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Foundation+Log.m"; sourceTree = "<group>"; };
+		F78278F31E03936700A9CFBD /* DMExtensionConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMExtensionConfig.h; sourceTree = "<group>"; };
+		F78278F41E03936700A9CFBD /* DMExtensionConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMExtensionConfig.m; sourceTree = "<group>"; };
 		F78B56891E003E39003BBDD4 /* XDLHomeCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDLHomeCollectionViewCell.h; sourceTree = "<group>"; };
 		F78B568A1E003E39003BBDD4 /* XDLHomeCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XDLHomeCollectionViewCell.m; sourceTree = "<group>"; };
 		F78B568B1E003E39003BBDD4 /* XDLHomeCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XDLHomeCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -102,6 +112,15 @@
 		F794606C1DBAA520007B8DF2 /* cityGroups.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = cityGroups.plist; sourceTree = "<group>"; };
 		F794606D1DBAA520007B8DF2 /* sorts.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = sorts.plist; sourceTree = "<group>"; };
 		F79460751DBAABF4007B8DF2 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		F7A001911E01A62A00BC341F /* XDLDealModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDLDealModel.h; sourceTree = "<group>"; };
+		F7A001921E01A62A00BC341F /* XDLDealModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XDLDealModel.m; sourceTree = "<group>"; };
+		F7A001941E01A66700BC341F /* XDLReturnDealModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XDLReturnDealModel.h; path = "Home(首页)/Model/XDLReturnDealModel.h"; sourceTree = "<group>"; };
+		F7A001951E01A66700BC341F /* XDLReturnDealModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XDLReturnDealModel.m; path = "Home(首页)/Model/XDLReturnDealModel.m"; sourceTree = "<group>"; };
+		F7A001971E031F7000BC341F /* NSString+XDLCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+XDLCategory.h"; sourceTree = "<group>"; };
+		F7A001981E031F7000BC341F /* NSString+XDLCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+XDLCategory.m"; sourceTree = "<group>"; };
+		F7A0019D1E03330600BC341F /* XDLDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDLDetailViewController.h; sourceTree = "<group>"; };
+		F7A0019E1E03330600BC341F /* XDLDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XDLDetailViewController.m; sourceTree = "<group>"; };
+		F7A0019F1E03330600BC341F /* XDLDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XDLDetailViewController.xib; sourceTree = "<group>"; };
 		F7EC39D91DFE5619001FEB33 /* XDLSortViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDLSortViewController.h; sourceTree = "<group>"; };
 		F7EC39DA1DFE5619001FEB33 /* XDLSortViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XDLSortViewController.m; sourceTree = "<group>"; };
 		F7EC39DC1DFE642C001FEB33 /* XDLSortModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDLSortModel.h; sourceTree = "<group>"; };
@@ -149,6 +168,7 @@
 		F776D54E1DFCA995003067B9 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				F7A0019A1E03329600BC341F /* Details */,
 				F776D54F1DFCA995003067B9 /* Home(首页) */,
 				F776D5631DFCA995003067B9 /* Main(主要) */,
 			);
@@ -194,11 +214,13 @@
 				F776D57F1DFCD304003067B9 /* XDLDistrictModel.h */,
 				F776D5801DFCD304003067B9 /* XDLDistrictModel.m */,
 				F776D5821DFCF3B1003067B9 /* XDLCityModel.h */,
+				F776D58B1DFD8572003067B9 /* XDLCityGroupModel.m */,
 				F776D5831DFCF3B1003067B9 /* XDLCityModel.m */,
 				F776D58A1DFD8572003067B9 /* XDLCityGroupModel.h */,
-				F776D58B1DFD8572003067B9 /* XDLCityGroupModel.m */,
 				F7EC39DC1DFE642C001FEB33 /* XDLSortModel.h */,
 				F7EC39DD1DFE642C001FEB33 /* XDLSortModel.m */,
+				F7A001911E01A62A00BC341F /* XDLDealModel.h */,
+				F7A001921E01A62A00BC341F /* XDLDealModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -241,6 +263,10 @@
 				F776D5661DFCA995003067B9 /* UIBarButtonItem+HMCategory.m */,
 				F776D5671DFCA995003067B9 /* UIView+HMCategory.h */,
 				F776D5681DFCA995003067B9 /* UIView+HMCategory.m */,
+				F7A001971E031F7000BC341F /* NSString+XDLCategory.h */,
+				F7A001981E031F7000BC341F /* NSString+XDLCategory.m */,
+				F78278F31E03936700A9CFBD /* DMExtensionConfig.h */,
+				F78278F41E03936700A9CFBD /* DMExtensionConfig.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -248,6 +274,7 @@
 		F776D5691DFCA995003067B9 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				F78278F11E03914200A9CFBD /* Foundation+Log.m */,
 				F776D56A1DFCA995003067B9 /* HMNavigateController.h */,
 				F776D56B1DFCA995003067B9 /* HMNavigateController.m */,
 			);
@@ -322,6 +349,34 @@
 				F794606D1DBAA520007B8DF2 /* sorts.plist */,
 			);
 			path = Plist;
+			sourceTree = "<group>";
+		};
+		F7A0019A1E03329600BC341F /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				F7A0019C1E0332AD00BC341F /* Controller */,
+				F7A0019B1E0332A900BC341F /* Model */,
+			);
+			name = Details;
+			sourceTree = "<group>";
+		};
+		F7A0019B1E0332A900BC341F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F7A001941E01A66700BC341F /* XDLReturnDealModel.h */,
+				F7A001951E01A66700BC341F /* XDLReturnDealModel.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		F7A0019C1E0332AD00BC341F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F7A0019D1E03330600BC341F /* XDLDetailViewController.h */,
+				F7A0019E1E03330600BC341F /* XDLDetailViewController.m */,
+				F7A0019F1E03330600BC341F /* XDLDetailViewController.xib */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 		F7EC39DF1DFFA8FC001FEB33 /* AwesomeMenu */ = {
@@ -415,6 +470,7 @@
 				F776D5761DFCA995003067B9 /* HomeNavView.xib in Resources */,
 				F776D57E1DFCD2BE003067B9 /* XDLDistrictViewController.xib in Resources */,
 				F79460711DBAA520007B8DF2 /* sorts.plist in Resources */,
+				F7A001A11E03330600BC341F /* XDLDetailViewController.xib in Resources */,
 				F776D5891DFD8547003067B9 /* XDLCityViewController.xib in Resources */,
 				F79460551DBA977D007B8DF2 /* Assets.xcassets in Resources */,
 				F776D5741DFCA995003067B9 /* HMDropdownView.xib in Resources */,
@@ -477,8 +533,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7A001931E01A62A00BC341F /* XDLDealModel.m in Sources */,
 				F7EC39EC1DFFA8FC001FEB33 /* DPAPI.m in Sources */,
+				F7A001961E01A66700BC341F /* XDLReturnDealModel.m in Sources */,
 				F776D5731DFCA995003067B9 /* HMDropdownView.m in Sources */,
+				F7A001A01E03330600BC341F /* XDLDetailViewController.m in Sources */,
 				F794604D1DBA977D007B8DF2 /* AppDelegate.m in Sources */,
 				F776D5881DFD8547003067B9 /* XDLCityViewController.m in Sources */,
 				F776D5811DFCD304003067B9 /* XDLDistrictModel.m in Sources */,
@@ -488,8 +547,11 @@
 				F7EC39EB1DFFA8FC001FEB33 /* AwesomeMenuItem.m in Sources */,
 				F776D5701DFCA995003067B9 /* HMCategoryModel.m in Sources */,
 				F776D5841DFCF3B1003067B9 /* XDLCityModel.m in Sources */,
+				F78278F21E03914200A9CFBD /* Foundation+Log.m in Sources */,
+				F7A001991E031F7000BC341F /* NSString+XDLCategory.m in Sources */,
 				F794604A1DBA977D007B8DF2 /* main.m in Sources */,
 				F776D5721DFCA995003067B9 /* HMDropdownRightTableViewCell.m in Sources */,
+				F78278F51E03936700A9CFBD /* DMExtensionConfig.m in Sources */,
 				F776D58C1DFD8572003067B9 /* XDLCityGroupModel.m in Sources */,
 				F776D5791DFCA995003067B9 /* HMNavigateController.m in Sources */,
 				F776D5921DFDF4B2003067B9 /* XDLSearchTableViewController.m in Sources */,

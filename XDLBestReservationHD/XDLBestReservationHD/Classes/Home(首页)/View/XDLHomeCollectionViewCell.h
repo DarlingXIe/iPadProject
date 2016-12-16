@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "XDLDealModel.h"
 @interface XDLHomeCollectionViewCell : UICollectionViewCell
+
+@property (nonatomic,strong) XDLDealModel * dealModel;
 
 @end

@@ -34,13 +34,14 @@
         UIButton * button = [UIButton buttonWithType:UIButtonTypeCustom];
         button.tag = i;
         XDLSortModel * model = self.dataArray[i];
-        
         [button setTitle:model.label forState:UIControlStateNormal];
         
         [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         [button setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
+        
         [button setBackgroundImage:[UIImage imageNamed:@"btn_filter_normal"] forState:UIControlStateNormal];
         [button setBackgroundImage:[UIImage imageNamed:@"btn_filter_selected"] forState:UIControlStateHighlighted];
+        
         [button addTarget:self action:@selector(clickbutton:) forControlEvents:UIControlEventTouchUpInside];
         button.width = width;
         button.height = height;

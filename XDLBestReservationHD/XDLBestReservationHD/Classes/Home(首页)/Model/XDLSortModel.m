@@ -11,6 +11,4 @@
 
 @implementation XDLSortModel
 
-
-
 @end
