@@ -209,9 +209,10 @@
     [XDLNotificationCenter postNotificationName:MTCollectStateDidChangeNotification object:nil userInfo:dealDic];
 
 }
+//5859c38d3eae2571df00028f iPhone
+//5859be224544cb4e8e00168e iPad
 - (IBAction)shareFunction:(id)sender {
-    
-    
+        
 }
 #pragma mark 支持的屏幕方向
 - (UIInterfaceOrientationMask)supportedInterfaceOrientations
