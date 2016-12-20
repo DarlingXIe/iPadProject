@@ -7,12 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "MJExtension.h"
 @interface XDLReturnDealModel : NSObject
 
 /** 是否支持随时退款，0：不是，1：是*/
 @property (nonatomic, assign) NSInteger is_refundable;
-
+/*退款信息*/
 @property (nonatomic, copy) NSString * special_tips;
 
 @end

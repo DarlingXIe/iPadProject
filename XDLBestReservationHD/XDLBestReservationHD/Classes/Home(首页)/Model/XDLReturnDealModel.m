@@ -10,5 +10,5 @@
 #import "XDLReturnDealModel.h"
 
 @implementation XDLReturnDealModel
-
+MJCodingImplementation
 @end

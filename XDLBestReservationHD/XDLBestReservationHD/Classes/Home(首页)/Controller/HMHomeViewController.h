@@ -7,7 +7,8 @@
 //
 
 
+#import "XDLMainCollectionViewController.h"
 
-@interface HMHomeViewController : UICollectionViewController
+@interface HMHomeViewController : XDLMainCollectionViewController
 
 @end

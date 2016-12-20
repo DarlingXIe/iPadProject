@@ -31,6 +31,19 @@
 		F776D5921DFDF4B2003067B9 /* XDLSearchTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F776D5911DFDF4B2003067B9 /* XDLSearchTableViewController.m */; };
 		F78278F21E03914200A9CFBD /* Foundation+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = F78278F11E03914200A9CFBD /* Foundation+Log.m */; };
 		F78278F51E03936700A9CFBD /* DMExtensionConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = F78278F41E03936700A9CFBD /* DMExtensionConfig.m */; };
+		F78278FC1E0595B800A9CFBD /* XDLMainCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F78278FB1E0595B800A9CFBD /* XDLMainCollectionViewController.m */; };
+		F78278FF1E05D76500A9CFBD /* XDLSearchCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F78278FE1E05D76500A9CFBD /* XDLSearchCollectionViewController.m */; };
+		F78279051E0600D700A9CFBD /* XDLCollectCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F78279041E0600D700A9CFBD /* XDLCollectCollectionViewController.m */; };
+		F78279081E0600F000A9CFBD /* XDLRecentCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F78279071E0600F000A9CFBD /* XDLRecentCollectionViewController.m */; };
+		F782790C1E06011000A9CFBD /* XDLLoginAndRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F782790A1E06011000A9CFBD /* XDLLoginAndRegisterViewController.m */; };
+		F782790D1E06011000A9CFBD /* XDLLoginAndRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F782790B1E06011000A9CFBD /* XDLLoginAndRegisterViewController.xib */; };
+		F782793D1E064D4D00A9CFBD /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = F78279331E064D4D00A9CFBD /* FMDatabase.m */; };
+		F782793E1E064D4D00A9CFBD /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = F78279351E064D4D00A9CFBD /* FMDatabaseAdditions.m */; };
+		F782793F1E064D4D00A9CFBD /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = F78279371E064D4D00A9CFBD /* FMDatabasePool.m */; };
+		F78279401E064D4D00A9CFBD /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = F78279391E064D4D00A9CFBD /* FMDatabaseQueue.m */; };
+		F78279411E064D4D00A9CFBD /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = F782793C1E064D4D00A9CFBD /* FMResultSet.m */; };
+		F78279431E064DA400A9CFBD /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F78279421E064DA400A9CFBD /* libsqlite3.tbd */; };
+		F78279601E0655E400A9CFBD /* MTDealTool.m in Sources */ = {isa = PBXBuildFile; fileRef = F782795F1E0655E400A9CFBD /* MTDealTool.m */; };
 		F78B568C1E003E39003BBDD4 /* XDLHomeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F78B568A1E003E39003BBDD4 /* XDLHomeCollectionViewCell.m */; };
 		F78B568D1E003E39003BBDD4 /* XDLHomeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F78B568B1E003E39003BBDD4 /* XDLHomeCollectionViewCell.xib */; };
 		F794604A1DBA977D007B8DF2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F79460491DBA977D007B8DF2 /* main.m */; };
@@ -98,6 +111,31 @@
 		F78278F11E03914200A9CFBD /* Foundation+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Foundation+Log.m"; sourceTree = "<group>"; };
 		F78278F31E03936700A9CFBD /* DMExtensionConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMExtensionConfig.h; sourceTree = "<group>"; };
 		F78278F41E03936700A9CFBD /* DMExtensionConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMExtensionConfig.m; sourceTree = "<group>"; };
+		F78278FA1E0595B800A9CFBD /* XDLMainCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDLMainCollectionViewController.h; sourceTree = "<group>"; };
+		F78278FB1E0595B800A9CFBD /* XDLMainCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XDLMainCollectionViewController.m; sourceTree = "<group>"; };
+		F78278FD1E05D76500A9CFBD /* XDLSearchCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDLSearchCollectionViewController.h; sourceTree = "<group>"; };
+		F78278FE1E05D76500A9CFBD /* XDLSearchCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XDLSearchCollectionViewController.m; sourceTree = "<group>"; };
+		F78279031E0600D700A9CFBD /* XDLCollectCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDLCollectCollectionViewController.h; sourceTree = "<group>"; };
+		F78279041E0600D700A9CFBD /* XDLCollectCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XDLCollectCollectionViewController.m; sourceTree = "<group>"; };
+		F78279061E0600F000A9CFBD /* XDLRecentCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDLRecentCollectionViewController.h; sourceTree = "<group>"; };
+		F78279071E0600F000A9CFBD /* XDLRecentCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XDLRecentCollectionViewController.m; sourceTree = "<group>"; };
+		F78279091E06011000A9CFBD /* XDLLoginAndRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDLLoginAndRegisterViewController.h; sourceTree = "<group>"; };
+		F782790A1E06011000A9CFBD /* XDLLoginAndRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XDLLoginAndRegisterViewController.m; sourceTree = "<group>"; };
+		F782790B1E06011000A9CFBD /* XDLLoginAndRegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XDLLoginAndRegisterViewController.xib; sourceTree = "<group>"; };
+		F78279321E064D4D00A9CFBD /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		F78279331E064D4D00A9CFBD /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		F78279341E064D4D00A9CFBD /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		F78279351E064D4D00A9CFBD /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		F78279361E064D4D00A9CFBD /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		F78279371E064D4D00A9CFBD /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		F78279381E064D4D00A9CFBD /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		F78279391E064D4D00A9CFBD /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		F782793A1E064D4D00A9CFBD /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
+		F782793B1E064D4D00A9CFBD /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		F782793C1E064D4D00A9CFBD /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		F78279421E064DA400A9CFBD /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		F782795E1E0655E400A9CFBD /* MTDealTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTDealTool.h; sourceTree = "<group>"; };
+		F782795F1E0655E400A9CFBD /* MTDealTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTDealTool.m; sourceTree = "<group>"; };
 		F78B56891E003E39003BBDD4 /* XDLHomeCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDLHomeCollectionViewCell.h; sourceTree = "<group>"; };
 		F78B568A1E003E39003BBDD4 /* XDLHomeCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XDLHomeCollectionViewCell.m; sourceTree = "<group>"; };
 		F78B568B1E003E39003BBDD4 /* XDLHomeCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XDLHomeCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -141,6 +179,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F78279431E064DA400A9CFBD /* libsqlite3.tbd in Frameworks */,
 				9837AF18349E9B364E9C9B52 /* libPods-XDLBestReservationHD.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -160,6 +199,7 @@
 		F5614FF54BAB202BE1186888 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F78279421E064DA400A9CFBD /* libsqlite3.tbd */,
 				818A494B72606DD0C1CCD50A /* libPods-XDLBestReservationHD.a */,
 			);
 			name = Frameworks;
@@ -168,6 +208,10 @@
 		F776D54E1DFCA995003067B9 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				F78279021E06004E00A9CFBD /* LoginAndRegister */,
+				F78279011E06004500A9CFBD /* Recent */,
+				F78279001E06003300A9CFBD /* Collect */,
+				F78278F61E05921600A9CFBD /* Search */,
 				F7A0019A1E03329600BC341F /* Details */,
 				F776D54F1DFCA995003067B9 /* Home(首页) */,
 				F776D5631DFCA995003067B9 /* Main(主要) */,
@@ -277,6 +321,8 @@
 				F78278F11E03914200A9CFBD /* Foundation+Log.m */,
 				F776D56A1DFCA995003067B9 /* HMNavigateController.h */,
 				F776D56B1DFCA995003067B9 /* HMNavigateController.m */,
+				F78278FA1E0595B800A9CFBD /* XDLMainCollectionViewController.h */,
+				F78278FB1E0595B800A9CFBD /* XDLMainCollectionViewController.m */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -284,6 +330,7 @@
 		F776D56C1DFCA995003067B9 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				F78279311E064D4D00A9CFBD /* fmdb */,
 				F7EC39DF1DFFA8FC001FEB33 /* AwesomeMenu */,
 				F7EC39E41DFFA8FC001FEB33 /* dianpingapi */,
 			);
@@ -295,8 +342,89 @@
 			children = (
 				F776D58D1DFDE69E003067B9 /* XDLConst.h */,
 				F776D58E1DFDE69F003067B9 /* XDLConst.m */,
+				F782795E1E0655E400A9CFBD /* MTDealTool.h */,
+				F782795F1E0655E400A9CFBD /* MTDealTool.m */,
 			);
 			path = Tool;
+			sourceTree = "<group>";
+		};
+		F78278F61E05921600A9CFBD /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				F78278F71E05923600A9CFBD /* Model */,
+				F78278F91E05925700A9CFBD /* View */,
+				F78278F81E05923900A9CFBD /* Controller */,
+			);
+			name = Search;
+			sourceTree = "<group>";
+		};
+		F78278F71E05923600A9CFBD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		F78278F81E05923900A9CFBD /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F78278FD1E05D76500A9CFBD /* XDLSearchCollectionViewController.h */,
+				F78278FE1E05D76500A9CFBD /* XDLSearchCollectionViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		F78278F91E05925700A9CFBD /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		F78279001E06003300A9CFBD /* Collect */ = {
+			isa = PBXGroup;
+			children = (
+				F78279031E0600D700A9CFBD /* XDLCollectCollectionViewController.h */,
+				F78279041E0600D700A9CFBD /* XDLCollectCollectionViewController.m */,
+			);
+			name = Collect;
+			sourceTree = "<group>";
+		};
+		F78279011E06004500A9CFBD /* Recent */ = {
+			isa = PBXGroup;
+			children = (
+				F78279061E0600F000A9CFBD /* XDLRecentCollectionViewController.h */,
+				F78279071E0600F000A9CFBD /* XDLRecentCollectionViewController.m */,
+			);
+			name = Recent;
+			sourceTree = "<group>";
+		};
+		F78279021E06004E00A9CFBD /* LoginAndRegister */ = {
+			isa = PBXGroup;
+			children = (
+				F78279091E06011000A9CFBD /* XDLLoginAndRegisterViewController.h */,
+				F782790A1E06011000A9CFBD /* XDLLoginAndRegisterViewController.m */,
+				F782790B1E06011000A9CFBD /* XDLLoginAndRegisterViewController.xib */,
+			);
+			name = LoginAndRegister;
+			sourceTree = "<group>";
+		};
+		F78279311E064D4D00A9CFBD /* fmdb */ = {
+			isa = PBXGroup;
+			children = (
+				F78279321E064D4D00A9CFBD /* FMDatabase.h */,
+				F78279331E064D4D00A9CFBD /* FMDatabase.m */,
+				F78279341E064D4D00A9CFBD /* FMDatabaseAdditions.h */,
+				F78279351E064D4D00A9CFBD /* FMDatabaseAdditions.m */,
+				F78279361E064D4D00A9CFBD /* FMDatabasePool.h */,
+				F78279371E064D4D00A9CFBD /* FMDatabasePool.m */,
+				F78279381E064D4D00A9CFBD /* FMDatabaseQueue.h */,
+				F78279391E064D4D00A9CFBD /* FMDatabaseQueue.m */,
+				F782793A1E064D4D00A9CFBD /* FMDB.h */,
+				F782793B1E064D4D00A9CFBD /* FMResultSet.h */,
+				F782793C1E064D4D00A9CFBD /* FMResultSet.m */,
+			);
+			path = fmdb;
 			sourceTree = "<group>";
 		};
 		F794603C1DBA977D007B8DF2 = {
@@ -466,6 +594,7 @@
 			files = (
 				F78B568D1E003E39003BBDD4 /* XDLHomeCollectionViewCell.xib in Resources */,
 				F794606F1DBAA520007B8DF2 /* cities.plist in Resources */,
+				F782790D1E06011000A9CFBD /* XDLLoginAndRegisterViewController.xib in Resources */,
 				F794606E1DBAA520007B8DF2 /* categories.plist in Resources */,
 				F776D5761DFCA995003067B9 /* HomeNavView.xib in Resources */,
 				F776D57E1DFCD2BE003067B9 /* XDLDistrictViewController.xib in Resources */,
@@ -533,11 +662,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F78279601E0655E400A9CFBD /* MTDealTool.m in Sources */,
+				F78279051E0600D700A9CFBD /* XDLCollectCollectionViewController.m in Sources */,
+				F782793D1E064D4D00A9CFBD /* FMDatabase.m in Sources */,
 				F7A001931E01A62A00BC341F /* XDLDealModel.m in Sources */,
 				F7EC39EC1DFFA8FC001FEB33 /* DPAPI.m in Sources */,
 				F7A001961E01A66700BC341F /* XDLReturnDealModel.m in Sources */,
 				F776D5731DFCA995003067B9 /* HMDropdownView.m in Sources */,
 				F7A001A01E03330600BC341F /* XDLDetailViewController.m in Sources */,
+				F78279081E0600F000A9CFBD /* XDLRecentCollectionViewController.m in Sources */,
+				F782793E1E064D4D00A9CFBD /* FMDatabaseAdditions.m in Sources */,
 				F794604D1DBA977D007B8DF2 /* AppDelegate.m in Sources */,
 				F776D5881DFD8547003067B9 /* XDLCityViewController.m in Sources */,
 				F776D5811DFCD304003067B9 /* XDLDistrictModel.m in Sources */,
@@ -548,21 +682,27 @@
 				F776D5701DFCA995003067B9 /* HMCategoryModel.m in Sources */,
 				F776D5841DFCF3B1003067B9 /* XDLCityModel.m in Sources */,
 				F78278F21E03914200A9CFBD /* Foundation+Log.m in Sources */,
+				F78278FF1E05D76500A9CFBD /* XDLSearchCollectionViewController.m in Sources */,
 				F7A001991E031F7000BC341F /* NSString+XDLCategory.m in Sources */,
 				F794604A1DBA977D007B8DF2 /* main.m in Sources */,
 				F776D5721DFCA995003067B9 /* HMDropdownRightTableViewCell.m in Sources */,
 				F78278F51E03936700A9CFBD /* DMExtensionConfig.m in Sources */,
 				F776D58C1DFD8572003067B9 /* XDLCityGroupModel.m in Sources */,
 				F776D5791DFCA995003067B9 /* HMNavigateController.m in Sources */,
+				F782790C1E06011000A9CFBD /* XDLLoginAndRegisterViewController.m in Sources */,
 				F776D5921DFDF4B2003067B9 /* XDLSearchTableViewController.m in Sources */,
 				F776D5771DFCA995003067B9 /* UIBarButtonItem+HMCategory.m in Sources */,
 				F7EC39DE1DFE642C001FEB33 /* XDLSortModel.m in Sources */,
+				F78279411E064D4D00A9CFBD /* FMResultSet.m in Sources */,
 				F776D56F1DFCA995003067B9 /* HMHomeViewController.m in Sources */,
 				F776D57D1DFCD2BE003067B9 /* XDLDistrictViewController.m in Sources */,
 				F78B568C1E003E39003BBDD4 /* XDLHomeCollectionViewCell.m in Sources */,
+				F78278FC1E0595B800A9CFBD /* XDLMainCollectionViewController.m in Sources */,
 				F7EC39ED1DFFA8FC001FEB33 /* DPRequest.m in Sources */,
 				F776D5711DFCA995003067B9 /* HMDropdownLeftTableViewCell.m in Sources */,
 				F776D56E1DFCA995003067B9 /* HMCategoryViewController.m in Sources */,
+				F78279401E064D4D00A9CFBD /* FMDatabaseQueue.m in Sources */,
+				F782793F1E064D4D00A9CFBD /* FMDatabasePool.m in Sources */,
 				F776D5781DFCA995003067B9 /* UIView+HMCategory.m in Sources */,
 				F776D5751DFCA995003067B9 /* HomeNavView.m in Sources */,
 			);

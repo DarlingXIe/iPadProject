@@ -13,15 +13,21 @@ NSString *const XDLCityNameKey = @"HMCityNameKey";
 NSString *const XDLCategoryDidChangeNotifacation = @"HMCategoryDidChangeNotifacation";
 NSString *const XDLCategoryModelKey = @"HMCategoryModelKey";
 NSString *const XDLCategorySubtitleKey = @"HMCategorySubtitleKey";
-
 // 区域通知
 NSString *const XDLDistrictDidChangeNotifacation = @"HMDistrictDidChangeNotifacation";
 NSString *const XDLDistrictModelKey = @"HMDistrictModelKey";
 NSString *const XDLDistrictSubtitleKey = @"HMDistrictSubtitleKey";
-
 // 排序通知
 NSString *const XDLSortDidChangeNotifacation = @"HMSortDidChangeNotifacation";
 NSString *const XDLSortModelKey = @"HMSortModelKey";
-
 // Size的宽度
 CGFloat XDLCellWidth = 300;
+// collect 通知
+NSString *const MTCollectStateDidChangeNotification = @"MTCollectStateDidChangeNotification";
+NSString *const MTIsCollectKey = @"MTIsCollectKey";
+NSString *const MTCollectDealKey = @"MTCollectDealKey";
+// recent 通知
+NSString *const MTRecentStateDidChangeNotification = @"MTRecentStateDidChangeNotification";
+NSString *const MTIsRecentKey = @"MTIsRecentKey";
+NSString *const MTRecentDealKey = @"MTRecentDealKey";
+

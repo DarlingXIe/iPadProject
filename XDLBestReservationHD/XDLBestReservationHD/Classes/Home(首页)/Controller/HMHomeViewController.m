@@ -14,19 +14,24 @@
 #import "XDLDistrictModel.h"
 #import "XDLSortModel.h"
 #import "XDLCityModel.h"
-#import "XDLConst.h"
+//#import "XDLConst.h"
 #import "HMCategoryModel.h"
-#import "XDLHomeCollectionViewCell.h"
-//#import "HMDealCell.h"
+//#import "XDLHomeCollectionViewCell.h"
+//#import "XDLDetailViewController.h"
 #import "AwesomeMenu.h"
 #import "Masonry.h"
-#import "DPAPI.h"
-#import "XDLDealModel.h"
-#import "MJExtension.h"
+//#import "DPAPI.h"
+//#import "XDLDealModel.h"
+//#import "MJExtension.h"
+//static NSString * const cellId = @"cellId";
+#import "XDLMainCollectionViewController.h"
+#import "XDLSearchCollectionViewController.h"
+#import "HMNavigateController.h"
+#import "XDLCollectCollectionViewController.h"
+#import "XDLRecentCollectionViewController.h"
 
-static NSString * const cellId = @"cellId";
 
-@interface HMHomeViewController ()<AwesomeMenuDelegate,DPRequestDelegate>
+@interface HMHomeViewController ()<AwesomeMenuDelegate>
 
 @property(nonatomic,strong) NSString * selectCategoryName;
 @property(nonatomic,strong) NSString * selectDistrictName;
@@ -52,7 +57,7 @@ static NSString * const cellId = @"cellId";
 
 @property (nonatomic, strong) UIImageView * noDataImageView;
 
-@property (nonatomic, strong) DPRequest * lastRequest;
+//@property (nonatomic, strong) DPRequest * lastRequest;
 
 @property (nonatomic, assign) NSInteger totalCount;
 
@@ -62,31 +67,7 @@ static NSString * const cellId = @"cellId";
 
 static NSString * const dealCellID = @"dealCellID";
 
-- (instancetype)init
-{
-    self = [super init];
-    if (self) {
-        UICollectionViewFlowLayout * layout = [UICollectionViewFlowLayout new];
-        layout.itemSize = CGSizeMake(XDLCellWidth, XDLCellWidth);
-        self = [self initWithCollectionViewLayout:layout];
-    }
-    return self;
-}
 #pragma mark : iOS8出现的屏幕旋转方法
-//屏幕适配列数:
--(void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator{
-    
-    NSInteger col = size.width > size.height ? 3 : 2;
-    
-    CGFloat inset = (size.width - col*XDLCellWidth) / (col + 1);
-    
-    UICollectionViewFlowLayout * layout = (UICollectionViewFlowLayout *)self.collectionViewLayout;
-    
-    layout.sectionInset = UIEdgeInsetsMake(inset, inset, inset, inset);
-    layout.minimumLineSpacing = inset;
-    
-    self.inset = inset;
-}
 - (void)viewDidLoad {
     [super viewDidLoad];
     //保证第一次运行view能够适配屏幕的尺寸
@@ -103,16 +84,13 @@ static NSString * const dealCellID = @"dealCellID";
     [XDLNotificationCenter addObserver:self selector:@selector(categoryDidChangeNotificaiton:) name:XDLCategoryDidChangeNotifacation object:nil];
     //
     [XDLNotificationCenter addObserver:self selector:@selector(cityVCDidChangeNotificaiton:) name:XDLCityDidChangeNotifacation object:nil];
-    
     //排序的通知
     [XDLNotificationCenter addObserver:self selector:@selector(sortDidChangeNotification:) name:XDLSortDidChangeNotifacation object:nil];
     //排序通知
     [XDLNotificationCenter addObserver:self selector:@selector(districtDisChangeNotifaction:) name:XDLDistrictDidChangeNotifacation object:nil];
     
     [self setupAwesomeMenu];
-    
-    [self setupRefresh];
-    //[self loadNewData];
+    [self.collectionView.mj_header beginRefreshing];
     
 }
 #pragma mark - 通知
@@ -137,7 +115,8 @@ static NSString * const dealCellID = @"dealCellID";
         self.selectCategoryName = subtitle;
     }
     //loadData;
-    [self loadData];
+    //[self loadData];
+    [self.collectionView.mj_header beginRefreshing];
     [self dismissViewControllerAnimated:true completion:nil];
     
 }
@@ -149,7 +128,8 @@ static NSString * const dealCellID = @"dealCellID";
     [self.districtNavView setTitle:[NSString stringWithFormat:@"%@-全部",self.selectCityName]];
     [self.districtNavView setSubtitle:@""];
     //加载数据。
-    [self loadData];
+    //[self loadData];
+    [self.collectionView.mj_header beginRefreshing];
     
 }
 #pragma mark - 区域的选择
@@ -171,7 +151,8 @@ static NSString * const dealCellID = @"dealCellID";
         self.selectDistrictName = subDis;
     }
     //loadData
-    [self loadData];
+    //[self loadData];
+    [self.collectionView.mj_header beginRefreshing];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
@@ -184,7 +165,8 @@ static NSString * const dealCellID = @"dealCellID";
     
     self.saveSortNumber = sortModel.value;
     //load data
-    [self loadData];
+    //[self loadData];
+    [self.collectionView.mj_header beginRefreshing];
     [self dismissViewControllerAnimated:true completion:nil];
 }
 
@@ -226,9 +208,9 @@ static NSString * const dealCellID = @"dealCellID";
     [sortNavView setSubtitle:@"默认排序"];
     [sortNavView setIcon:@"icon_sort" hightlightIcon:@"icon_sort_highlighted"];
     [sortNavView setTarget:self action:@selector(sortClick)];
-    
     self.navigationItem.leftBarButtonItems = @[logoItem, categoryItem, districtItem, sortItem];
     self.sortNavView = sortNavView;
+    
 }
 #pragma mark 设置右边导航栏按钮
 - (void)setupRightNav {
@@ -250,7 +232,6 @@ static NSString * const dealCellID = @"dealCellID";
         HMCategoryViewController *categoryVC = [HMCategoryViewController new];
         //2. 设置以popover方式弹出
         categoryVC.modalPresentationStyle = UIModalPresentationPopover;
-     
         self.CategoryViewController = categoryVC;
     }
     //3. 获取Popover
@@ -259,7 +240,6 @@ static NSString * const dealCellID = @"dealCellID";
     popoverC.barButtonItem = self.navigationItem.leftBarButtonItems[1];
     //5. 模态弹出
     [self presentViewController:self.CategoryViewController animated:YES completion:nil];
-    
 }
 #pragma mark -区域按钮点击方法
 -(void)districtClick{
@@ -281,7 +261,7 @@ static NSString * const dealCellID = @"dealCellID";
     //5. 模态弹出
     [self presentViewController:districtVC animated:YES completion:nil];
     
-     self.selectCityName = self.selectCityName == nil? @"北京" : self.selectCityName;
+    self.selectCityName = self.selectCityName == nil? @"北京" : self.selectCityName;
     
 }
 #pragma mark - 排序按钮点击方法
@@ -301,32 +281,24 @@ static NSString * const dealCellID = @"dealCellID";
     //5. 模态弹出
     [self presentViewController:self.sortViewController animated:YES completion:nil];
 }
-
 #pragma mark 搜索按钮点击方法
 - (void)searchItemClick
 {
     NSLog(@"搜索");
+    if(self.selectCityName){
+        XDLSearchCollectionViewController * searchCollectionView = [[XDLSearchCollectionViewController alloc] init];
+        searchCollectionView.cityName = self.selectCityName;
+        HMNavigateController * nav = [[HMNavigateController alloc] initWithRootViewController:searchCollectionView];
+        [self presentViewController:nav animated:true completion:nil];
+    }else{
+        [SVProgressHUD showErrorWithStatus:@"请选择城市后在搜索"];
+    }
+    
 }
 #pragma mark 地图按钮点击方法
 - (void)mapItemClick
 {
     NSLog(@"地图");
-}
-#pragma mark UICollectionView代理
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    
-     self.collectionView.mj_footer.hidden = self.totalCount == self.dealArray.count ;
-     self.noDataImageView.hidden = self.dealArray.count != 0;
-     return self.dealArray.count;
-//      return 10;
-}
-
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    
-    XDLHomeCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:dealCellID forIndexPath:indexPath];
-    cell.dealModel = self.dealArray[indexPath.row];
-    //cell.dealModel.title = @"hahahah";
-    return cell;
 }
 #pragma mark 城市数据懒加载
 - (NSArray *)citiesArray
@@ -338,7 +310,6 @@ static NSString * const dealCellID = @"dealCellID";
     }
     return _citiesArray;
 }
-
 #pragma mark lazy setupUI
 -(XDLDistrictViewController *)districtViewController{
     if(_districtViewController == nil){
@@ -384,7 +355,7 @@ static NSString * const dealCellID = @"dealCellID";
     [self.view addSubview:menu];
     
     menu.rotateAddButton = true;
-    //调整角度可以把rototeAngle和wholeAngle一起调整
+//调整角度可以把rototeAngle和wholeAngle一起调整
 //    menu.menuWholeAngle = -M_PI;
 //    menu.rotateAngle = M_PI_2;
     menu.menuWholeAngle = M_PI_2;
@@ -407,11 +378,16 @@ static NSString * const dealCellID = @"dealCellID";
             NSLog(@"1");
             break;
         case 1:
-            NSLog(@"2");
+        {
+            HMNavigateController * nav = [[HMNavigateController alloc] initWithRootViewController:[[XDLCollectCollectionViewController alloc] init]];
+            [self presentViewController:nav animated:true completion:nil];
             break;
-        case 2:
-            NSLog(@"3");
+        }
+        case 2:{
+            HMNavigateController * nav = [[HMNavigateController alloc] initWithRootViewController:[[XDLRecentCollectionViewController alloc] init]];
+            [self presentViewController:nav animated:true completion:nil];
             break;
+        }
         case 3:
             NSLog(@"4");
             break;
@@ -419,7 +395,6 @@ static NSString * const dealCellID = @"dealCellID";
             break;
     }
 }
-
 #pragma mark- AwesomeMenu 代理方法
 -(void)awesomeMenuWillAnimateOpen:(AwesomeMenu *)menu{
     
@@ -437,79 +412,22 @@ static NSString * const dealCellID = @"dealCellID";
     }];
 }
 
-#pragma mark-loadData 分类请求数据
--(void)loadData{
+#pragma mark- 实现父类的方法
+-(void)setupParams:(NSMutableDictionary *)params{
     
-    DPAPI * apI = [DPAPI new];
-    NSMutableDictionary * params = [NSMutableDictionary dictionary];
-    
-    //请求参数
     params[@"city"] = self.selectCityName == nil? @"北京" : self.selectCityName;
-    params[@"category"] = self.selectCategoryName;
-    params[@"region"] = self.selectDistrictName;
-    params[@"sort"] = self.selectSortValue;
-    params[@"page"] = @(self.currentPage);
-    params[@"limit"] = @(20);
-    self.lastRequest = [apI requestWithURL:@"v1/deal/find_deals" params:params delegate:self];
-}
--(void)loadNewData{
-    self.currentPage = 1;
-    [self loadData];
-}
--(void)loadMoreData{
-    self.currentPage++;
-    [self loadData];
-}
-#pragma mark-requestDataDelegate
-#pragma mark-请求成功
-- (void)request:(DPRequest *)request didFinishLoadingWithResult:(id)result
-{
-    NSLog(@"reslut: %@", result[@"deals"]);
     
-    if(self.lastRequest != request){
-        return;
-     }
-    
-    if(self.currentPage == 1){
-        [self.dealArray removeAllObjects];
+    if (self.selectCategoryName) {
+        params[@"category"] = self.selectCategoryName;
     }
-    
-    [result writeToFile:@"/Users/DalinXie/Desktop/iPadProject/DarlinR.plist"
-             atomically:true];
-    
-    self.dealArray = [XDLDealModel mj_objectArrayWithKeyValuesArray:result[@"deals"]];
-    
-    [self.collectionView.mj_header endRefreshing];
-    [self.collectionView.mj_footer endRefreshing];
-    //判断是否加载完整的首页的数据,隐藏,mj_footer
-    self.totalCount = [result[@"total_count"] integerValue];
-    
-    [self.collectionView reloadData];
-}
-#pragma mark-请求失败
-- (void)request:(DPRequest *)request didFailWithError:(NSError *)error
-{
-    NSLog(@"error: %@",error);
-    //?????????
-    if(self.lastRequest != request){
-        return;
+    // 区域
+    if (self.selectDistrictName) {
+        params[@"region"] = self.selectDistrictName;
     }
-    [self.collectionView.mj_header endRefreshing];
-    [self.collectionView.mj_footer endRefreshing];
-    [SVProgressHUD showErrorWithStatus:[NSString stringWithFormat:@"connect error"]];
-    if(self.currentPage != 1){
-        self.currentPage--;
+    // 排序
+    if (self.saveSortNumber) {
+        params[@"sort"] = self.saveSortNumber;
     }
-}
-#pragma mark- setupRefresh
--(void)setupRefresh{
-    
-    self.collectionView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
-    [self.collectionView.mj_header beginRefreshing];
-    
-    self.collectionView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreData)];
-    //[self.collectionView.mj_footer beginRefreshing];
-    self.collectionView.mj_footer.hidden = true;
 }
 #pragma mark- dealWithNoImage
 -(UIImageView *)noDataImageView{
@@ -522,29 +440,5 @@ static NSString * const dealCellID = @"dealCellID";
         }];
     }
     return _noDataImageView;
-    
 }
-#pragma mark <UICollectionViewDelegate>
-/*
-// Uncomment this method to specify if the specified item should be highlighted during tracking
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
-	return YES;
-}
-*/
-/*
-// Uncomment this method to specify if the specified item should be selected
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    return YES;
-}
-*//*
-// Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldShowMenuForItemAtIndexPath:(NSIndexPath *)indexPath {
-	return NO;
-}
-- (BOOL)collectionView:(UICollectionView *)collectionView canPerformAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
-	return NO;
-}
-- (void)collectionView:(UICollectionView *)collectionView performAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
-}
-*/
 @end

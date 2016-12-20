@@ -7,9 +7,21 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "XDLDealModel.h"
+
+@class XDLDealModel, XDLHomeCollectionViewCell;
+@protocol XDLHomeCollectionViewCellDelegate <NSObject>
+
+@optional
+
+- (void)dealCellCheckingStateDidChange:(XDLHomeCollectionViewCell *)cell;
+
+@end
+
+
 @interface XDLHomeCollectionViewCell : UICollectionViewCell
 
 @property (nonatomic,strong) XDLDealModel * dealModel;
+
+@property (nonatomic,strong) id<XDLHomeCollectionViewCellDelegate>delegate;
 
 @end

@@ -32,3 +32,12 @@ UIKIT_EXTERN NSString *const XDLSortModelKey;
 // Size的宽度
 UIKIT_EXTERN const CGFloat XDLCellWidth;
 
+UIKIT_EXTERN NSString *const MTCollectStateDidChangeNotification;
+UIKIT_EXTERN NSString *const MTIsCollectKey;
+UIKIT_EXTERN NSString *const MTCollectDealKey;
+
+UIKIT_EXTERN NSString *const MTRecentStateDidChangeNotification;
+UIKIT_EXTERN NSString *const MTIsRecentKey;
+UIKIT_EXTERN NSString *const MTRecentDealKey;
+
+

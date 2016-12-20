@@ -24,5 +24,5 @@
 -(void)setCurrent_price:(NSString *)current_price{
     _current_price = current_price.dealPriceString;
 }
-
+MJCodingImplementation
 @end

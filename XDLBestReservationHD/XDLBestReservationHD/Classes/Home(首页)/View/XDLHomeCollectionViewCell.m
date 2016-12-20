@@ -7,6 +7,8 @@
 //
 
 #import "XDLHomeCollectionViewCell.h"
+#import "XDLDealModel.h"
+
 @interface XDLHomeCollectionViewCell()
 @property (weak, nonatomic) IBOutlet UIImageView *InfoImageView;
 
@@ -17,6 +19,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *CurrentPriceLabel;
 @property (weak, nonatomic) IBOutlet UILabel *PurchaseCountLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *NewShopImage;
+@property (weak, nonatomic) IBOutlet UIButton *coverButton;
+@property (weak, nonatomic) IBOutlet UIImageView *checkImageView;
 
 @end
 
@@ -48,11 +52,27 @@
     
     NSDateFormatter * dateFmt = [NSDateFormatter new];
     
-    dateFmt.dateFormat = @"MM-dd-yyyy";
+    dateFmt.dateFormat = @"yyyy-MM-dd";
     
     NSString * nowDateStr = [dateFmt stringFromDate:nowDate];
     
     self.NewShopImage.hidden = [nowDateStr compare:dealModel.publish_date] == NSOrderedDescending ? YES : NO;
+    
+    self.coverButton.hidden = !dealModel.isEditting;
+    
+    self.checkImageView.hidden = !dealModel.isChecking;
+    
+}
+- (IBAction)CoverButtonAction:(id)sender {
+    
+    self.checkImageView.hidden = !self.checkImageView.isHidden;
+    
+    self.dealModel.checking = !self.dealModel.checking;
+    
+    if ([self.delegate respondsToSelector:@selector(dealCellCheckingStateDidChange:)]) {
+        [self.delegate dealCellCheckingStateDidChange:self];
+    }
+
 }
 
 

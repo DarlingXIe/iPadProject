@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "XDLReturnDealModel.h"
-
+#import "MJExtension.h"
 @interface XDLDealModel : NSObject
 /** 团购单ID */
 @property (copy, nonatomic) NSString *deal_id;
@@ -50,6 +50,11 @@
  字典直接嵌套字典的情况, 不需要额外转换.
  字典嵌套数组, 数组里面又是字典, 此时需要额外转换
  */
-@property (copy,nonatomic) XDLReturnDealModel * restrictions;
+@property (strong ,nonatomic) XDLReturnDealModel * restrictions;
+
+/** 是否正在编辑 */
+@property (nonatomic, assign, getter=isEditting) BOOL editing;
+/** 是否被勾选了 */
+@property (nonatomic, assign, getter=isChecking) BOOL checking;
 
 @end
